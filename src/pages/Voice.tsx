@@ -1,51 +1,57 @@
-import { Card } from '../components/common/Card';
-import { Badge } from '../components/common/Badge';
-import { STRINGS } from '../utils/strings';
-import { Check, X, MessageSquare, Zap, BarChart2, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const TONE_PILLARS = [
+const VOICE_PRINCIPLES = [
   {
-    title: "Direct & Uncompromising",
-    icon: Zap,
-    desc: "Get straight to the point. Sports moves at breakneck speed; communications should never meander with buzzwords."
+    num: "01 / DIRECT, NOT DECORATED",
+    title: "Headline with short, punchy statements.",
+    desc: "Strip away adjective clutter, long intro phrases, and corporate filler. Tell the reader what we do and why it matters in under 10 words."
   },
   {
-    title: "Confident & Authoritative",
-    icon: Shield,
-    desc: "Speak with the assurance of market insiders who hold rights and execute deals on the ground."
+    num: "02 / CONFIDENT, NUMBER-CENTRIC",
+    title: "Numbers don't lie. Lead with metrics.",
+    desc: "Anchor claims with verifiable data points: 400M+ users, 150+ brands, booked versus delivered. Facts build confidence faster than marketing promises."
   },
   {
-    title: "Myth-Breaking",
-    icon: MessageSquare,
-    desc: "Challenge conventional legacy media assumptions with real-world fan engagement metrics and modern cultural proof."
+    num: "03 / MYTH-BREAKING, NOT DEFENSIVE",
+    title: "Expose agency inefficiencies directly.",
+    desc: "Identify the gaps in traditional sports marketing (5 contracts, 5 rate cards) clearly and present our ecosystem as the natural upgrade."
   },
   {
-    title: "Commercially Intelligent",
-    icon: BarChart2,
-    desc: "Ground every creative claim in demonstrable audience scale, conversion mechanics, and commercial returns."
+    num: "04 / CONSULTATIVE, NOT TRANSACTIONAL",
+    title: "Build around client objectives, not rate cards.",
+    desc: "We advise on sports culture, audience behavior, and campaign design — we don't just sell ad impressions off a menu."
+  },
+  {
+    num: "05 / INSIDE SPORTS CULTURE",
+    title: "Speak fan language with restraint.",
+    desc: "Use real sports terminology (rights, match broadcasts, creator feeds) without sounding like a noisy sports betting app or gaming advert."
   }
 ];
 
 const SAY_MATRIX = [
   {
-    say: "We give brands a single gateway into the sports media ecosystem.",
-    dont: "We are a full-service synergistic marketing solutions provider for athletic endeavors.",
-    why: "Clarity over corporate jargon. State the concrete operational value."
+    say: '"We run all five as one."',
+    sayWhy: "Direct statement explaining our connected ecosystem in six words.",
+    avoid: '"We pride ourselves on offering an integrated approach to campaign delivery."',
+    avoidWhy: "Generic corporate cliché with zero memorability."
   },
   {
-    say: "Built, not bought.",
-    dont: "We provide comprehensive 360-degree sponsorship acquisitions.",
-    why: "Own the identity and ethos rather than sounding like an intermediary agency."
+    say: '"Numbers don\'t lie."',
+    sayWhy: "Establishes our data-centric proof mindset immediately.",
+    avoid: '"We provide innovative solutions for brands looking to engage audiences."',
+    avoidWhy: 'Meaningless buzzwords ("innovative solutions", "engage audiences").'
   },
   {
-    say: "Direct creator relationships with verifiable athlete reach.",
-    dont: "Leveraging our industry-leading influencer talent network.",
-    why: "Emphasize verifiable outcomes and real athletic authenticity."
+    say: '"One partner. All solutions."',
+    sayWhy: "Clear value proposition contrasting against multi-vendor hassle.",
+    avoid: '"We are passionate about creating meaningful connections."',
+    avoidWhy: "Overly emotional agency marketing trope."
   },
   {
-    say: "Connecting rights-holders, platforms, and fans under one roof.",
-    dont: "Disrupting the multi-channel sports paradigm across global regions.",
-    why: "Specify the exact stakeholders rather than buzzword generalities."
+    say: '"Sport isn\'t one door."',
+    sayWhy: "Inside observation about modern fan consumption habits.",
+    avoid: '"We understand the multi-channel digital sports landscape."',
+    avoidWhy: "Weak passive phrase with no creative friction."
   }
 ];
 
@@ -53,83 +59,89 @@ export default function Voice() {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <header className="space-y-2 border-b border-[#1C2537] pb-8">
-        <Badge variant="cyan">{STRINGS.voice.category}</Badge>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          {STRINGS.voice.title}
-        </h1>
-        <p className="text-slate-400 text-sm sm:text-base max-w-2xl leading-relaxed">
-          {STRINGS.voice.lead}
+      <header className="page-header">
+        <div className="page-category">02 / BRAND SYSTEM</div>
+        <h1 className="page-title">Voice &amp; Tone</h1>
+        <p className="page-lead">
+          LevelUp Media speaks like an intelligent sports insider. Direct, confident, and number-centric — never corporate for the sake of sounding corporate.
         </p>
       </header>
 
-      {/* Tone Pillars */}
-      <section id="tone" className="space-y-4">
-        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-          Core Tone Principles
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {TONE_PILLARS.map((pillar) => {
-            const Icon = pillar.icon;
-            return (
-              <Card key={pillar.title} className="p-5 bg-[#0E131E] border-[#1C2537]">
-                <div className="flex items-center gap-2.5 mb-2 text-sky-400">
-                  <Icon className="w-4 h-4" />
-                  <h3 className="text-sm font-bold text-white">{pillar.title}</h3>
-                </div>
-                <p className="text-xs text-slate-400 leading-relaxed">{pillar.desc}</p>
-              </Card>
-            );
-          })}
+      {/* Section 1: The 5 Core Voice Rules */}
+      <section id="principles" className="doc-section">
+        <h2 className="section-title">The Five Voice Principles</h2>
+        <div className="prose">
+          <p>Every piece of written copy — from email introductions to deck headlines and web copy — must embody these five characteristics:</p>
         </div>
-      </section>
 
-      {/* Say vs Don't Say Matrix */}
-      <section id="say-matrix" className="space-y-4">
-        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-          Say / Don&apos;t Say Matrix
-        </h2>
-        <div className="space-y-3">
-          {SAY_MATRIX.map((item, idx) => (
-            <Card key={idx} className="p-4 sm:p-5 bg-[#0E131E] border-[#1C2537]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-3 border-b border-[#1C2537]">
-                {/* Say */}
-                <div className="flex items-start gap-2.5">
-                  <div className="p-1 rounded bg-emerald-950/70 border border-emerald-500/30 text-emerald-400 mt-0.5 flex-shrink-0">
-                    <Check className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] font-mono font-bold uppercase text-emerald-400 tracking-wider mb-1">
-                      Say This
-                    </div>
-                    <div className="text-sm font-medium text-slate-200">
-                      &ldquo;{item.say}&rdquo;
-                    </div>
-                  </div>
-                </div>
-
-                {/* Don't Say */}
-                <div className="flex items-start gap-2.5">
-                  <div className="p-1 rounded bg-rose-950/70 border border-rose-500/30 text-rose-400 mt-0.5 flex-shrink-0">
-                    <X className="w-3.5 h-3.5" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] font-mono font-bold uppercase text-rose-400 tracking-wider mb-1">
-                      Avoid This
-                    </div>
-                    <div className="text-sm text-slate-400 line-through">
-                      &ldquo;{item.dont}&rdquo;
-                    </div>
-                  </div>
-                </div>
+        <div className="flex flex-col gap-4 mt-6">
+          {VOICE_PRINCIPLES.map((item) => (
+            <div key={item.num} className="p-6 border border-[#E5E7EB] rounded-lg bg-white">
+              <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-1">
+                {item.num}
               </div>
-              <div className="pt-2 text-xs text-slate-400 italic">
-                <strong>Why:</strong> {item.why}
-              </div>
-            </Card>
+              <h4 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-1">
+                {item.title}
+              </h4>
+              <p className="text-[15px] text-[#475569] leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
           ))}
         </div>
       </section>
+
+      {/* Section 2: Say / Don't Say Comparison Matrix */}
+      <section id="say-matrix" className="doc-section">
+        <h2 className="section-title">Say / Don&apos;t Say Matrix</h2>
+        <div className="prose">
+          <p>Compare these real examples to understand the difference between LevelUp voice and generic agency speak:</p>
+        </div>
+
+        <div className="flex flex-col gap-5 mt-6">
+          {SAY_MATRIX.map((item, idx) => (
+            <div key={idx} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Say */}
+              <div className="rounded-lg p-6 border border-[#E5E7EB] bg-[#FAFAFC] border-t-4 border-t-[#10B981]">
+                <div className="font-['Space_Grotesk'] text-xs font-bold text-[#10B981] mb-2 uppercase">
+                  ✓ SAY THIS
+                </div>
+                <div className="font-['Radio_Canada_Big'] text-xl font-bold text-[#0F172A] mb-2">
+                  {item.say}
+                </div>
+                <div className="text-sm text-[#475569]">
+                  {item.sayWhy}
+                </div>
+              </div>
+
+              {/* Avoid */}
+              <div className="rounded-lg p-6 border border-[#E5E7EB] bg-[#FAFAFC] border-t-4 border-t-[#EF4444]">
+                <div className="font-['Space_Grotesk'] text-xs font-bold text-[#EF4444] mb-2 uppercase">
+                  ✕ AVOID THIS
+                </div>
+                <div className="font-['Radio_Canada_Big'] text-lg font-medium text-[#64748B] line-through mb-2">
+                  {item.avoid}
+                </div>
+                <div className="text-sm text-[#475569]">
+                  {item.avoidWhy}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer Navigation */}
+      <footer className="doc-footer-nav">
+        <Link to="/foundation" className="footer-nav-link">
+          <span className="footer-nav-label">← Previous Section</span>
+          <span className="footer-nav-title">Foundation &amp; Story</span>
+        </Link>
+        <Link to="/logo" className="footer-nav-link next">
+          <span className="footer-nav-label">Next Section →</span>
+          <span className="footer-nav-title">Logo &amp; Mark</span>
+        </Link>
+      </footer>
     </div>
   );
 }

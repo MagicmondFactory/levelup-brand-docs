@@ -1,31 +1,5 @@
-import { Card } from '../components/common/Card';
-import { Badge } from '../components/common/Badge';
-import { STRINGS } from '../utils/strings';
+import { Link } from 'react-router-dom';
 import { useClipboard } from '../hooks/useClipboard';
-import { Copy, Check } from 'lucide-react';
-
-const PRIMARY_SWATCHES = [
-  { name: "Royal Blue (Base)", hex: "#00205B", rgb: "0, 32, 91", cmyk: "100, 85, 20, 35", role: "Primary brand anchor, mastheads, corporate print" },
-  { name: "Blue Deep", hex: "#001438", rgb: "0, 20, 56", cmyk: "100, 88, 30, 60", role: "Dark mode backdrops, deep surface containers" },
-  { name: "Blue Navy", hex: "#000D24", rgb: "0, 13, 36", cmyk: "100, 90, 35, 75", role: "Deepest structural framing, extreme contrast" },
-  { name: "Blue Light", hex: "#1A3B7A", rgb: "26, 59, 122", cmyk: "90, 70, 10, 10", role: "Active hover states, interactive card outlines" },
-  { name: "Blue Mist", hex: "#E6ECF5", rgb: "230, 236, 245", cmyk: "10, 5, 0, 0", role: "High-contrast light print backgrounds, subtle fills" },
-];
-
-const ACCENT_SWATCHES = [
-  { name: "Electric Cyan (Accent)", hex: "#00C2FF", rgb: "0, 194, 255", cmyk: "70, 0, 0, 0", role: "High-impact digital highlights, buttons, badges" },
-  { name: "Cyan Deep", hex: "#009ACC", rgb: "0, 154, 204", cmyk: "75, 10, 5, 5", role: "Hover states for cyan elements, contrast links" },
-  { name: "Cyan Dark", hex: "#007399", rgb: "0, 115, 153", cmyk: "80, 25, 10, 15", role: "Borders, charts, subtle status indicators" },
-  { name: "Cyan Tint", hex: "#E5F9FF", rgb: "229, 249, 255", cmyk: "8, 0, 0, 0", role: "Light mode notification callouts, pastel backdrops" },
-];
-
-const NEUTRAL_SWATCHES = [
-  { name: "Pure Dark", hex: "#080B10", rgb: "8, 11, 16", role: "Canvas background, base page body" },
-  { name: "Card Surface", hex: "#111622", rgb: "17, 22, 34", role: "Card backgrounds, component containers" },
-  { name: "Border Slate", hex: "#242F45", rgb: "36, 47, 69", role: "Component borders, dividing rules, strokes" },
-  { name: "Text Primary", hex: "#F1F5F9", rgb: "241, 245, 249", role: "Headings, primary body copy on dark" },
-  { name: "Text Muted", hex: "#94A3B8", rgb: "148, 163, 184", role: "Secondary metadata, captions, timestamps" },
-];
 
 export default function Color() {
   const { copy, copiedText } = useClipboard();
@@ -33,106 +7,154 @@ export default function Color() {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <header className="space-y-2 border-b border-[#1C2537] pb-8">
-        <Badge variant="cyan">{STRINGS.color.category}</Badge>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          {STRINGS.color.title}
-        </h1>
-        <p className="text-slate-400 text-sm sm:text-base max-w-2xl leading-relaxed">
-          {STRINGS.color.lead}
+      <header className="page-header">
+        <div className="page-category">04 / BRAND SYSTEM</div>
+        <h1 className="page-title">Color System</h1>
+        <p className="page-lead">
+          A structured palette system divided into primary brand foundations, strategic accents, neutral greys, and WCAG AA contrast rules.
         </p>
       </header>
 
-      {/* Primary Palette */}
-      <section id="primary" className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Primary Palette — Royal Blue
-          </h2>
-          <span className="text-xs text-slate-400">Click swatch to copy HEX</span>
+      {/* Section 1: Primary Colors */}
+      <section id="primary" className="doc-section">
+        <h2 className="section-title">Primary Brand Palette</h2>
+        <div className="prose">
+          <p>
+            Deep Navy functions as the foundation anchor, while Blue Orchid represents primary brand energy. White and light blue create editorial breathing room.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {PRIMARY_SWATCHES.map((swatch) => {
-            const isJustCopied = copiedText === swatch.hex;
-            return (
-              <Card
-                key={swatch.hex}
-                className="p-4 bg-[#0E131E] border-[#1C2537] hover:border-sky-500/40 cursor-pointer group"
-                onClick={() => copy(swatch.hex)}
+        {/* Blue Orchid Card */}
+        <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white mt-6">
+          <div className="h-44 p-6 bg-[#3343FF] text-white flex flex-col justify-between">
+            <div>
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/25 px-2 py-1 rounded">
+                PRIMARY BRAND ENERGY
+              </span>
+            </div>
+          </div>
+          <div className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E7EB]">
+            <div>
+              <div className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">Blue Orchid</div>
+              <div className="text-xs text-[#64748B]">Core interactive &amp; brand signature color</div>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => copy('#3343FF')}
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] rounded text-xs font-mono font-semibold transition-colors"
               >
-                <div
-                  className="h-20 rounded-lg w-full mb-3 flex items-end justify-end p-2 transition-transform group-hover:scale-[1.02]"
-                  style={{ backgroundColor: swatch.hex }}
-                >
-                  <button className="px-2 py-1 bg-black/50 backdrop-blur-sm rounded text-[10px] font-mono text-white flex items-center gap-1">
-                    {isJustCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-                    <span>{isJustCopied ? "COPIED" : swatch.hex}</span>
-                  </button>
-                </div>
-                <div className="text-sm font-bold text-white mb-1">{swatch.name}</div>
-                <div className="text-xs font-mono text-sky-400 mb-1">{swatch.hex}</div>
-                <div className="text-[11px] text-slate-400">{swatch.role}</div>
-              </Card>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Accent Palette */}
-      <section id="secondary" className="space-y-4">
-        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-          Secondary & Accent Palette — Electric Cyan
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {ACCENT_SWATCHES.map((swatch) => {
-            const isJustCopied = copiedText === swatch.hex;
-            return (
-              <Card
-                key={swatch.hex}
-                className="p-4 bg-[#0E131E] border-[#1C2537] hover:border-cyan-500/40 cursor-pointer group"
-                onClick={() => copy(swatch.hex)}
+                {copiedText === '#3343FF' ? 'COPIED!' : 'HEX #3343FF'}
+              </button>
+              <button
+                onClick={() => copy('rgb(51, 67, 255)')}
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] rounded text-xs font-mono font-semibold transition-colors"
               >
-                <div
-                  className="h-20 rounded-lg w-full mb-3 flex items-end justify-end p-2 transition-transform group-hover:scale-[1.02]"
-                  style={{ backgroundColor: swatch.hex }}
-                >
-                  <button className="px-2 py-1 bg-black/60 backdrop-blur-sm rounded text-[10px] font-mono text-white flex items-center gap-1">
-                    {isJustCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-                    <span>{isJustCopied ? "COPIED" : swatch.hex}</span>
-                  </button>
-                </div>
-                <div className="text-sm font-bold text-white mb-1">{swatch.name}</div>
-                <div className="text-xs font-mono text-cyan-400 mb-1">{swatch.hex}</div>
-                <div className="text-[11px] text-slate-400">{swatch.role}</div>
-              </Card>
-            );
-          })}
+                {copiedText === 'rgb(51, 67, 255)' ? 'COPIED!' : 'RGB (51, 67, 255)'}
+              </button>
+            </div>
+          </div>
+          {/* Ramp */}
+          <div className="p-5 bg-[#FAFAFC]">
+            <div className="font-['Space_Grotesk'] text-xs text-[#64748B] mb-2 font-bold uppercase">
+              Blue Orchid Ramp System
+            </div>
+            <div className="grid grid-cols-5 h-12 rounded overflow-hidden border border-[#E5E7EB] text-[11px] font-mono font-bold text-center">
+              <div onClick={() => copy('#070732')} className="bg-[#070732] text-white flex items-center justify-center cursor-pointer">#070732</div>
+              <div onClick={() => copy('#3343FF')} className="bg-[#3343FF] text-white flex items-center justify-center cursor-pointer">#3343FF</div>
+              <div onClick={() => copy('#6673FF')} className="bg-[#6673FF] text-white flex items-center justify-center cursor-pointer">#6673FF</div>
+              <div onClick={() => copy('#B3B9FF')} className="bg-[#B3B9FF] text-[#070732] flex items-center justify-center cursor-pointer">#B3B9FF</div>
+              <div onClick={() => copy('#FFFFFF')} className="bg-[#FFFFFF] text-[#070732] flex items-center justify-center cursor-pointer border-l border-[#E5E7EB]">#FFFFFF</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Deep Navy Card */}
+        <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white mt-6">
+          <div className="h-44 p-6 bg-[#070732] text-white flex flex-col justify-between">
+            <div>
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-white/15 px-2 py-1 rounded">
+                CORE FOUNDATION
+              </span>
+            </div>
+          </div>
+          <div className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <div className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">Deep Navy</div>
+              <div className="text-xs text-[#64748B]">Core dark foundation and high-contrast editorial field</div>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => copy('#070732')}
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] rounded text-xs font-mono font-semibold transition-colors"
+              >
+                {copiedText === '#070732' ? 'COPIED!' : 'HEX #070732'}
+              </button>
+              <button
+                onClick={() => copy('rgb(7, 7, 50)')}
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] rounded text-xs font-mono font-semibold transition-colors"
+              >
+                {copiedText === 'rgb(7, 7, 50)' ? 'COPIED!' : 'RGB (7, 7, 50)'}
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Neutrals & Dark Architecture */}
-      <section className="space-y-4">
-        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-          Neutral Architecture & Dark Tokens
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-          {NEUTRAL_SWATCHES.map((swatch) => (
-            <Card
-              key={swatch.hex}
-              className="p-3 bg-[#0E131E] border-[#1C2537] cursor-pointer hover:border-slate-500 group"
-              onClick={() => copy(swatch.hex)}
-            >
-              <div
-                className="h-10 rounded mb-2 border border-white/10"
-                style={{ backgroundColor: swatch.hex }}
-              />
-              <div className="text-xs font-bold text-white truncate">{swatch.name}</div>
-              <div className="text-[10px] font-mono text-slate-400">{swatch.hex}</div>
-            </Card>
-          ))}
+      {/* Section 2: Strategic Accent Palette */}
+      <section id="accent" className="doc-section">
+        <h2 className="section-title">Strategic Accent Palette</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+          {/* Electric Green */}
+          <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white">
+            <div className="h-32 p-5 bg-[#A6E35F] text-[#274604] flex items-end">
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/10 px-2 py-1 rounded">ACCENT / PERFORMANCE</span>
+            </div>
+            <div className="p-5 flex items-center justify-between">
+              <div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-base text-[#0F172A]">Electric Green</div>
+                <div className="text-xs text-[#64748B]">High-energy conversion metrics</div>
+              </div>
+              <button
+                onClick={() => copy('#A6E35F')}
+                className="px-3 py-1.5 bg-[#F4F5F8] text-[#0F172A] rounded text-xs font-mono font-semibold"
+              >
+                #A6E35F
+              </button>
+            </div>
+          </div>
+
+          {/* Trophy Gold */}
+          <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white">
+            <div className="h-32 p-5 bg-[#FFC845] text-[#997F3D] flex items-end">
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/10 px-2 py-1 rounded">ACCENT / CRICKET</span>
+            </div>
+            <div className="p-5 flex items-center justify-between">
+              <div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-base text-[#0F172A]">Trophy Gold</div>
+                <div className="text-xs text-[#64748B]">Championship &amp; cricket collateral</div>
+              </div>
+              <button
+                onClick={() => copy('#FFC845')}
+                className="px-3 py-1.5 bg-[#F4F5F8] text-[#0F172A] rounded text-xs font-mono font-semibold"
+              >
+                #FFC845
+              </button>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Footer Navigation */}
+      <footer className="doc-footer-nav">
+        <Link to="/logo" className="footer-nav-link">
+          <span className="footer-nav-label">← Previous Section</span>
+          <span className="footer-nav-title">Logo &amp; Mark</span>
+        </Link>
+        <Link to="/typography" className="footer-nav-link next">
+          <span className="footer-nav-label">Next Section →</span>
+          <span className="footer-nav-title">Typography</span>
+        </Link>
+      </footer>
     </div>
   );
 }

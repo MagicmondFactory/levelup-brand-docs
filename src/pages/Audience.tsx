@@ -1,107 +1,108 @@
-import { Card } from '../components/common/Card';
-import { Badge } from '../components/common/Badge';
-import { STRINGS } from '../utils/strings';
-import { Users, Globe2, Briefcase, Video, Trophy } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const PERSONAS = [
-  {
-    title: "Enterprise Brand Marketers",
-    role: "CMOs, Head of Sponsorships, Global Media Directors",
-    need: "Seeking direct, measured access to youth sports audiences without dealing with fragmented intermediaries.",
-    icon: Briefcase,
-    color: "text-sky-400"
-  },
-  {
-    title: "Rights Holders & Federations",
-    role: "Leagues, Sports Franchises, Tournament Organizers",
-    need: "Maximizing the commercial value of broadcast rights, sponsorships, and digital fan communities.",
-    icon: Trophy,
-    color: "text-amber-400"
-  },
-  {
-    title: "Athletes & Sports Creators",
-    role: "Top-flight Athletes, Viral Creators, Match Commentators",
-    need: "Long-term IP ownership, authentic commercial alignment, and broadcast-grade production support.",
-    icon: Video,
-    color: "text-cyan-400"
-  },
-  {
-    title: "The Modern Connected Fan",
-    role: "Digital-first sports enthusiasts across MENA & South Asia",
-    need: "High-octane content across TikTok, live OTT streams, podcasts, and stadium activations.",
-    icon: Users,
-    color: "text-emerald-400"
-  }
+const GROUPS = [
+  { num: "GROUP 01", title: "Rights Holders & Leagues", desc: "Seeking reliable commercial monetization, high broadcast quality, and digital distribution expansion." },
+  { num: "GROUP 02", title: "Global & Regional Brands", desc: "Seeking direct access to high-intent cricket and football fans without five agency middlemen." },
+  { num: "GROUP 03", title: "Creators & Athletes", desc: "Seeking professional representation, brand sponsorship alignment, and high-end video production support." },
+  { num: "GROUP 04", title: "Digital & OTT Platforms", desc: "Seeking high-retention live sports highlights, stats widgets, and interactive fan engagement features." }
 ];
 
-const TERRITORIES = [
-  { region: "MENA (Middle East & North Africa)", focus: "UAE, Saudi Arabia, Qatar, Egypt", desc: "Rapidly expanding athletic investments, world-class tournaments, and sovereign sports portfolios." },
-  { region: "South Asia", focus: "India, Pakistan, Bangladesh, Sri Lanka", desc: "Massive cricket audiences, hyper-engaged digital youth demographics, and booming creator economies." },
-  { region: "Global Athletic Hubs", focus: "UK, Western Europe, North America", desc: "Cross-border brand partnerships, athlete representation, and diaspora fan communities." }
+const ROLES = [
+  {
+    title: "Chief Marketing Officers (CMOs)",
+    type: "BUYER",
+    desc: "Focus on bottom-line business ROI, category exclusivity, brand safety, and measurable consumer sentiment lift across target MENA and South Asia territories."
+  },
+  {
+    title: "Brand Sponsorship Managers",
+    type: "BUYER",
+    desc: "Focus on activation flexibility, athlete meet-and-greets, stadium VIP hospitality, and frictionless multi-market contractual deliverables."
+  },
+  {
+    title: "Media Agency Planners",
+    type: "INFLUENCER",
+    desc: "Focus on CPM efficiency, verified reach metrics, third-party impression verification (IAS / DoubleVerify), and cross-platform reporting dashboards."
+  },
+  {
+    title: "Talent Agents & Athlete Managers",
+    type: "INFLUENCER",
+    desc: "Focus on athlete brand alignment, image rights protection, fair compensation, and long-term multi-year creative partnership upside."
+  }
 ];
 
 export default function Audience() {
   return (
     <div className="space-y-12">
       {/* Header */}
-      <header className="space-y-2 border-b border-[#1C2537] pb-8">
-        <Badge variant="cyan">{STRINGS.audience.category}</Badge>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          {STRINGS.audience.title}
-        </h1>
-        <p className="text-slate-400 text-sm sm:text-base max-w-2xl leading-relaxed">
-          {STRINGS.audience.lead}
+      <header className="page-header">
+        <div className="page-category">06 / STRATEGY &amp; ASSETS</div>
+        <h1 className="page-title">Audience &amp; Markets</h1>
+        <p className="page-lead">
+          Understanding who buys, who influences commercial decisions, and how LevelUp connects brands with sports fans across MENA and South Asia.
         </p>
       </header>
 
-      {/* Stakeholder Personas */}
-      <section id="personas" className="space-y-4">
-        <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-          Stakeholder Personas
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {PERSONAS.map((persona) => {
-            const Icon = persona.icon;
-            return (
-              <Card key={persona.title} className="p-5 bg-[#0E131E] border-[#1C2537]">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-[#111622] border border-[#242F45]">
-                    <Icon className={`w-5 h-5 ${persona.color}`} />
-                  </div>
-                  <div>
-                    <h3 className="text-base font-bold text-white">{persona.title}</h3>
-                    <div className="text-xs text-slate-400">{persona.role}</div>
-                  </div>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pt-2 border-t border-[#1C2537]">
-                  {persona.need}
-                </p>
-              </Card>
-            );
-          })}
+      {/* Section 1: Stakeholder Ecosystem Groups */}
+      <section id="stakeholders" className="doc-section">
+        <h2 className="section-title">Ecosystem Stakeholder Groups</h2>
+        <div className="prose">
+          <p>LevelUp Media serves four core groups within the global sports marketing ecosystem:</p>
         </div>
-      </section>
 
-      {/* Territorial Footprint */}
-      <section className="space-y-4">
-        <div className="flex items-center gap-2">
-          <Globe2 className="w-5 h-5 text-sky-400" />
-          <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Territorial Footprint & Core Markets
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {TERRITORIES.map((territory) => (
-            <Card key={territory.region} className="p-5 bg-[#0E131E] border-[#1C2537]">
-              <div className="text-xs font-mono font-bold text-sky-400 uppercase tracking-wider mb-2">
-                {territory.region}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+          {GROUPS.map((group) => (
+            <div key={group.num} className="p-6 border border-[#E5E7EB] rounded-lg bg-white">
+              <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-1">
+                {group.num}
               </div>
-              <div className="text-sm font-bold text-white mb-2">{territory.focus}</div>
-              <p className="text-xs text-slate-400 leading-relaxed">{territory.desc}</p>
-            </Card>
+              <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-2">
+                {group.title}
+              </h3>
+              <p className="text-sm text-[#475569] leading-relaxed">
+                {group.desc}
+              </p>
+            </div>
           ))}
         </div>
       </section>
+
+      {/* Section 2: Who Pays vs Who Influences */}
+      <section id="decision-makers" className="doc-section">
+        <h2 className="section-title">Decision Makers — Buyers vs. Influencers</h2>
+        <div className="prose">
+          <p>Tailor commercial communications specifically to the priorities of each decision-maker role:</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          {ROLES.map((role) => (
+            <div key={role.title} className="p-6 border border-[#E5E7EB] rounded-lg bg-white">
+              <span className={`inline-block font-['Space_Grotesk'] text-[11px] font-bold px-2 py-0.5 rounded mb-2 ${
+                role.type === 'BUYER' ? 'bg-[#E9EBFF] text-[#3343FF]' : 'bg-[#F4F5F8] text-[#64748B]'
+              }`}>
+                {role.type}
+              </span>
+              <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-2">
+                {role.title}
+              </h3>
+              <p className="text-sm text-[#475569] leading-relaxed">
+                {role.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer Navigation */}
+      <footer className="doc-footer-nav">
+        <Link to="/typography" className="footer-nav-link">
+          <span className="footer-nav-label">← Previous Section</span>
+          <span className="footer-nav-title">Typography</span>
+        </Link>
+        <Link to="/applications" className="footer-nav-link next">
+          <span className="footer-nav-label">Next Section →</span>
+          <span className="footer-nav-title">Applications</span>
+        </Link>
+      </footer>
     </div>
   );
 }
