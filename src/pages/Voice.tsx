@@ -74,9 +74,9 @@ export default function Voice() {
           <p>Every piece of written copy — from email introductions to deck headlines and web copy — must embody these five characteristics:</p>
         </div>
 
-        <div className="flex flex-col gap-4 mt-6">
+        <div className="flex flex-col gap-3 mt-6">
           {VOICE_PRINCIPLES.map((item) => (
-            <div key={item.num} className="p-6 border border-[#E5E7EB] rounded-lg bg-white">
+            <div key={item.num} className="p-5 border border-[#E5E7EB] bg-white">
               <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-1">
                 {item.num}
               </div>
@@ -98,11 +98,11 @@ export default function Voice() {
           <p>Compare these real examples to understand the difference between LevelUp voice and generic agency speak:</p>
         </div>
 
-        <div className="flex flex-col gap-5 mt-6">
+        <div className="flex flex-col gap-3 mt-6">
           {SAY_MATRIX.map((item, idx) => (
-            <div key={idx} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div key={idx} className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {/* Say */}
-              <div className="rounded-lg p-6 border border-[#E5E7EB] bg-[#FAFAFC] border-t-4 border-t-[#10B981]">
+              <div className="p-5 border border-[#E5E7EB] bg-[#FAFAFC] border-t-4 border-t-[#10B981]">
                 <div className="font-['Space_Grotesk'] text-xs font-bold text-[#10B981] mb-2 uppercase">
                   ✓ SAY THIS
                 </div>
@@ -115,7 +115,7 @@ export default function Voice() {
               </div>
 
               {/* Avoid */}
-              <div className="rounded-lg p-6 border border-[#E5E7EB] bg-[#FAFAFC] border-t-4 border-t-[#EF4444]">
+              <div className="p-5 border border-[#E5E7EB] bg-[#FAFAFC] border-t-4 border-t-[#EF4444]">
                 <div className="font-['Space_Grotesk'] text-xs font-bold text-[#EF4444] mb-2 uppercase">
                   ✕ AVOID THIS
                 </div>

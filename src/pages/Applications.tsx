@@ -43,8 +43,8 @@ export default function Applications() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
+          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
             <div className="p-8 bg-[#070732] text-white relative min-h-[160px] flex flex-col justify-between">
               <div className="flex justify-between items-center">
                 <span className="font-['Space_Grotesk'] text-xs text-[#A6E35F] font-bold">BROADCAST OVERLAY</span>
@@ -60,7 +60,7 @@ export default function Applications() {
             </div>
           </div>
 
-          <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white">
+          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
             <div className="p-8 bg-[#3343FF] text-white relative min-h-[160px] flex flex-col justify-between">
               <div className="flex justify-between items-center">
                 <span className="font-['Space_Grotesk'] text-xs text-[#E9EBFF] font-bold">SOCIAL CARD TEMPLATE</span>
@@ -85,7 +85,7 @@ export default function Applications() {
           <p>Physical collateral and digital presentation decks should communicate confidence through restraint:</p>
         </div>
 
-        <div className="mt-6 flex flex-col gap-6">
+        <div className="mt-6 flex flex-col gap-3">
           {/* Business Cards */}
           <div className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
             <div className="p-6 border-b border-[#E5E7EB]">

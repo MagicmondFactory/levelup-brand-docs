@@ -49,9 +49,9 @@ export default function Audience() {
           <p>LevelUp Media serves four core groups within the global sports marketing ecosystem:</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
           {GROUPS.map((group) => (
-            <div key={group.num} className="p-6 border border-[#E5E7EB] rounded-lg bg-white">
+            <div key={group.num} className="p-6 border border-[#E5E7EB] bg-white">
               <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-1">
                 {group.num}
               </div>
@@ -73,10 +73,10 @@ export default function Audience() {
           <p>Tailor commercial communications specifically to the priorities of each decision-maker role:</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
           {ROLES.map((role) => (
-            <div key={role.title} className="p-6 border border-[#E5E7EB] rounded-lg bg-white">
-              <span className={`inline-block font-['Space_Grotesk'] text-[11px] font-bold px-2 py-0.5 rounded mb-2 ${
+            <div key={role.title} className="p-6 border border-[#E5E7EB] bg-white">
+              <span className={`inline-block font-['Space_Grotesk'] text-[11px] font-bold px-2 py-0.5 mb-2 ${
                 role.type === 'BUYER' ? 'bg-[#E9EBFF] text-[#3343FF]' : 'bg-[#F4F5F8] text-[#64748B]'
               }`}>
                 {role.type}

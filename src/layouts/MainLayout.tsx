@@ -51,9 +51,9 @@ export function MainLayout() {
           </div>
         )}
 
-        {/* Main Content Area (Original Quiet Canvas with Floating Download Brochure) */}
-        <main className="flex-1 min-w-0 bg-white relative px-6 sm:px-16 pb-24">
-          {/* Top-Right Action CTA matching exact original design */}
+        {/* Main Content Area */}
+        <main className={`flex-1 min-w-0 bg-white relative pb-24 ${location.pathname === '/' ? 'px-0' : 'px-6 sm:px-16'}`}>
+          {/* Top-Right Action CTA */}
           <div className="absolute top-6 right-6 sm:right-16 z-30">
             <a
               href={BROCHURE_URL}
@@ -70,10 +70,14 @@ export function MainLayout() {
             </a>
           </div>
 
-          {/* Dynamic Page Outlet with max-width 840px */}
-          <div className="w-full max-w-[840px] mx-auto pt-8">
+          {/* Dynamic Page Content */}
+          {location.pathname === '/' ? (
             <Outlet />
-          </div>
+          ) : (
+            <div className="w-full max-w-[840px] mx-auto pt-8">
+              <Outlet />
+            </div>
+          )}
         </main>
       </div>
 

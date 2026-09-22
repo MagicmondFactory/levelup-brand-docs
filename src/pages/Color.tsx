@@ -25,10 +25,10 @@ export default function Color() {
         </div>
 
         {/* Blue Orchid Card */}
-        <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white mt-6">
+        <div className="border border-[#E5E7EB] overflow-hidden bg-white mt-6">
           <div className="h-44 p-6 bg-[#3343FF] text-white flex flex-col justify-between">
             <div>
-              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/25 px-2 py-1 rounded">
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/25 px-2 py-1">
                 PRIMARY BRAND ENERGY
               </span>
             </div>
@@ -41,13 +41,13 @@ export default function Color() {
             <div className="flex gap-2">
               <button
                 onClick={() => copy('#3343FF')}
-                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] rounded text-xs font-mono font-semibold transition-colors"
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] text-xs font-mono font-semibold transition-colors"
               >
                 {copiedText === '#3343FF' ? 'COPIED!' : 'HEX #3343FF'}
               </button>
               <button
                 onClick={() => copy('rgb(51, 67, 255)')}
-                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] rounded text-xs font-mono font-semibold transition-colors"
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] text-xs font-mono font-semibold transition-colors"
               >
                 {copiedText === 'rgb(51, 67, 255)' ? 'COPIED!' : 'RGB (51, 67, 255)'}
               </button>
@@ -58,7 +58,7 @@ export default function Color() {
             <div className="font-['Space_Grotesk'] text-xs text-[#64748B] mb-2 font-bold uppercase">
               Blue Orchid Ramp System
             </div>
-            <div className="grid grid-cols-5 h-12 rounded overflow-hidden border border-[#E5E7EB] text-[11px] font-mono font-bold text-center">
+            <div className="grid grid-cols-5 h-12 overflow-hidden border border-[#E5E7EB] text-[11px] font-mono font-bold text-center">
               <div onClick={() => copy('#070732')} className="bg-[#070732] text-white flex items-center justify-center cursor-pointer">#070732</div>
               <div onClick={() => copy('#3343FF')} className="bg-[#3343FF] text-white flex items-center justify-center cursor-pointer">#3343FF</div>
               <div onClick={() => copy('#6673FF')} className="bg-[#6673FF] text-white flex items-center justify-center cursor-pointer">#6673FF</div>
@@ -69,10 +69,10 @@ export default function Color() {
         </div>
 
         {/* Deep Navy Card */}
-        <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white mt-6">
+        <div className="border border-[#E5E7EB] overflow-hidden bg-white mt-6">
           <div className="h-44 p-6 bg-[#070732] text-white flex flex-col justify-between">
             <div>
-              <span className="font-['Space_Grotesk'] text-xs font-bold bg-white/15 px-2 py-1 rounded">
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-white/15 px-2 py-1">
                 CORE FOUNDATION
               </span>
             </div>
@@ -85,13 +85,13 @@ export default function Color() {
             <div className="flex gap-2">
               <button
                 onClick={() => copy('#070732')}
-                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] rounded text-xs font-mono font-semibold transition-colors"
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] text-xs font-mono font-semibold transition-colors"
               >
                 {copiedText === '#070732' ? 'COPIED!' : 'HEX #070732'}
               </button>
               <button
                 onClick={() => copy('rgb(7, 7, 50)')}
-                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] rounded text-xs font-mono font-semibold transition-colors"
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] text-xs font-mono font-semibold transition-colors"
               >
                 {copiedText === 'rgb(7, 7, 50)' ? 'COPIED!' : 'RGB (7, 7, 50)'}
               </button>
@@ -103,11 +103,11 @@ export default function Color() {
       {/* Section 2: Strategic Accent Palette */}
       <section id="accent" className="doc-section">
         <h2 className="section-title">Strategic Accent Palette</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
           {/* Electric Green */}
-          <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white">
+          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
             <div className="h-32 p-5 bg-[#A6E35F] text-[#274604] flex items-end">
-              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/10 px-2 py-1 rounded">ACCENT / PERFORMANCE</span>
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/10 px-2 py-1">ACCENT / PERFORMANCE</span>
             </div>
             <div className="p-5 flex items-center justify-between">
               <div>
@@ -116,7 +116,7 @@ export default function Color() {
               </div>
               <button
                 onClick={() => copy('#A6E35F')}
-                className="px-3 py-1.5 bg-[#F4F5F8] text-[#0F172A] rounded text-xs font-mono font-semibold"
+                className="px-3 py-1.5 bg-[#F4F5F8] text-[#0F172A] text-xs font-mono font-semibold"
               >
                 #A6E35F
               </button>
@@ -124,9 +124,9 @@ export default function Color() {
           </div>
 
           {/* Trophy Gold */}
-          <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white">
+          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
             <div className="h-32 p-5 bg-[#FFC845] text-[#997F3D] flex items-end">
-              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/10 px-2 py-1 rounded">ACCENT / CRICKET</span>
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/10 px-2 py-1">ACCENT / CRICKET</span>
             </div>
             <div className="p-5 flex items-center justify-between">
               <div>
@@ -135,7 +135,7 @@ export default function Color() {
               </div>
               <button
                 onClick={() => copy('#FFC845')}
-                className="px-3 py-1.5 bg-[#F4F5F8] text-[#0F172A] rounded text-xs font-mono font-semibold"
+                className="px-3 py-1.5 bg-[#F4F5F8] text-[#0F172A] text-xs font-mono font-semibold"
               >
                 #FFC845
               </button>

@@ -107,8 +107,8 @@ export default function Foundation() {
       <section id="mission-vision" className="doc-section">
         <h2 className="section-title">Mission &amp; Vision</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div className="p-8 border border-[#E5E7EB] rounded-lg bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
+          <div className="p-8 border border-[#E5E7EB] bg-white">
             <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-2 uppercase tracking-[0.05em]">
               Our Mission
             </div>
@@ -120,7 +120,7 @@ export default function Foundation() {
             </p>
           </div>
 
-          <div className="p-8 border border-[#E5E7EB] rounded-lg bg-white">
+          <div className="p-8 border border-[#E5E7EB] bg-white">
             <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-2 uppercase tracking-[0.05em]">
               Our Vision
             </div>
@@ -146,11 +146,11 @@ export default function Foundation() {
         <div className="mt-8">
           <h3 className="section-subtitle">The Seven Positioning Pillars</h3>
 
-          <div className="flex flex-col gap-3 mt-4">
+          <div className="flex flex-col gap-2.5 mt-4">
             {PILLARS.map((pillar) => (
               <div
                 key={pillar.num}
-                className="p-5 border border-[#E5E7EB] rounded-[6px] bg-[#FAFAFC] flex items-start gap-5 hover:border-[#3343FF] transition-colors"
+                className="p-5 border border-[#E5E7EB] bg-[#FAFAFC] flex items-start gap-5 hover:border-[#3343FF] transition-colors"
               >
                 <span className="font-['Space_Grotesk'] font-bold text-base text-[#3343FF] w-7 flex-shrink-0">
                   {pillar.num}

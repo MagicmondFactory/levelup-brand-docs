@@ -138,15 +138,15 @@ a:hover {
   font-weight: 600;
 }
 
-/* Edge-to-Edge Blue Cover Banner */
+/* Full-Width / Edge-to-Edge Blue Cover Banner */
 .doc-cover-banner {
-  width: calc(100% + 8rem);
-  margin-left: -4rem;
-  margin-right: -4rem;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   margin-top: 0 !important;
   padding: 0 !important;
   background-color: #3343FF;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
   overflow: hidden;
   border-bottom: 1px solid var(--border-hairline);
   display: block;
@@ -158,6 +158,7 @@ a:hover {
 .doc-cover-banner .cover-hero-img {
   width: 100%;
   height: auto;
+  min-height: 240px;
   display: block;
   vertical-align: top;
   margin: 0 !important;
@@ -400,3 +401,36 @@ a:hover {
   font-weight: 700;
   color: var(--text-primary);
 }
+
+/* ==========================================================================
+   Global Button & Card Strict Overrides per User Requirements:
+   1. All button text strictly single line (nowrap).
+   2. No corner radius in cards across the whole site.
+   ========================================================================== */
+
+button,
+.btn,
+[class*="btn"],
+.inline-download-btn,
+.btn-download-brochure,
+a[role="button"] {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+}
+
+/* Enforce zero corner radius on cards, containers, buttons, and badges */
+.card,
+.topic-card,
+[class*="rounded-lg"],
+[class*="rounded-md"],
+[class*="rounded-[6px]"],
+[class*="rounded-xl"] {
+  border-radius: 0 !important;
+}
+
+.inline-download-btn,
+.search-shortcut,
+.search-trigger-btn {
+  border-radius: 0 !important;
+}
+

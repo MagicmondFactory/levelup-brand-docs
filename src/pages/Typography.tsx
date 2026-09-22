@@ -13,7 +13,7 @@ export default function Typography() {
       </header>
 
       {/* Inline Download Badge */}
-      <div className="p-4 border border-[#E5E7EB] rounded-lg bg-[#FAFAFC] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div className="p-4 border border-[#E5E7EB] bg-[#FAFAFC] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="text-sm text-[#475569]">
           Need the official TTF brand font files for desktop &amp; print installation?
         </div>
@@ -34,9 +34,9 @@ export default function Typography() {
           <p>Our brand uses three distinct font families for specific roles:</p>
         </div>
 
-        <div className="flex flex-col gap-6 mt-6">
+        <div className="flex flex-col gap-3 mt-6">
           {/* Radio Canada Big */}
-          <div className="p-8 border border-[#E5E7EB] rounded-lg bg-white">
+          <div className="p-8 border border-[#E5E7EB] bg-white">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
               <span className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF]">01 / DISPLAY &amp; HEADLINES</span>
               <span className="text-xs text-[#64748B]">Radio Canada Big · Weights: 400, 500, 600, 700</span>
@@ -50,7 +50,7 @@ export default function Typography() {
           </div>
 
           {/* Geist */}
-          <div className="p-8 border border-[#E5E7EB] rounded-lg bg-white">
+          <div className="p-8 border border-[#E5E7EB] bg-white">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
               <span className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF]">02 / BODY &amp; CAPTIONS</span>
               <span className="text-xs text-[#64748B]">Geist · Weights: 300, 400, 500, 600, 700</span>
@@ -64,7 +64,7 @@ export default function Typography() {
           </div>
 
           {/* Space Grotesk */}
-          <div className="p-8 border border-[#E5E7EB] rounded-lg bg-white">
+          <div className="p-8 border border-[#E5E7EB] bg-white">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
               <span className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF]">03 / NUMERALS &amp; LABELS</span>
               <span className="text-xs text-[#64748B]">Space Grotesk · Weights: 400, 500, 600, 700</span>

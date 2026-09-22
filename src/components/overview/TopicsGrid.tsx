@@ -59,7 +59,7 @@ const TOPICS = [
 
 export function TopicsGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
       {TOPICS.map((topic) => (
         <Link key={topic.path} to={topic.path} className="topic-card">
           <div className="topic-card-num">{topic.num}</div>

@@ -28,9 +28,9 @@ export default function Logo() {
           <p>Use the official vector files supplied below. Never approximate, redraw, or alter the logotype geometry.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
           {/* Primary Wordmark */}
-          <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white">
+          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
             <div className="p-12 flex items-center justify-center bg-[#070732] min-h-[180px]">
               <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Wordmark" className="h-10 w-auto brightness-0 invert" />
             </div>
@@ -47,7 +47,7 @@ export default function Logo() {
           </div>
 
           {/* Standalone U Symbol */}
-          <div className="border border-[#E5E7EB] rounded-lg overflow-hidden bg-white">
+          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
             <div className="p-12 flex items-center justify-center bg-[#070732] min-h-[180px]">
               <img src="/assets/logos/U.svg" alt="LevelUp U Symbol" className="h-14 w-auto brightness-0 invert" />
             </div>
@@ -65,7 +65,7 @@ export default function Logo() {
         </div>
       </section>
 
-      {/* Section 2: Clearspace & Minimum Size */}
+      {/* Section 2: Clearspace & Minimum Scale */}
       <section id="clearspace" className="doc-section">
         <h2 className="section-title">Clearspace &amp; Minimum Scale</h2>
         <div className="prose">
@@ -74,8 +74,8 @@ export default function Logo() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          <div className="p-6 border border-[#E5E7EB] rounded-lg bg-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
+          <div className="p-6 border border-[#E5E7EB] bg-white">
             <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-2 uppercase">
               Digital Minimum Scale
             </div>
@@ -87,7 +87,7 @@ export default function Logo() {
             </p>
           </div>
 
-          <div className="p-6 border border-[#E5E7EB] rounded-lg bg-white">
+          <div className="p-6 border border-[#E5E7EB] bg-white">
             <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-2 uppercase">
               Print Minimum Scale
             </div>
@@ -108,9 +108,9 @@ export default function Logo() {
           <p>The six strict rules for brand mark integrity across all internal and partner communications:</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
           {MISUSE_RULES.map((item, idx) => (
-            <div key={idx} className="p-5 border border-[#E5E7EB] rounded-lg bg-[#FAFAFC]">
+            <div key={idx} className="p-5 border border-[#E5E7EB] bg-[#FAFAFC]">
               <div className="font-['Space_Grotesk'] text-xs font-bold text-[#DC2626] mb-1 uppercase">
                 RULE 0{idx + 1}
               </div>
