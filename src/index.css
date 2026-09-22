@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Radio+Canada+Big:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Core Tokens */
+  --blue-orchid: #3343FF;
+  --blue-orchid-dark: #070732;
+  --blue-orchid-light: #6673FF;
+  --blue-orchid-pale: #E9EBFF;
+
+  --electric-green: #A6E35F;
+  --electric-green-dark: #274604;
+  --electric-green-light: #DEFFB0;
+
+  --pitch-green: #014E3D;
+  --pitch-green-dark: #013728;
+  --pitch-green-light: #6B7568;
+
+  --trophy-gold: #FFC845;
+  --trophy-gold-dark: #997F3D;
+  --trophy-gold-pale: #FFE5A3;
+
+  /* Documentation Neutral System */
+  --bg-page: #FFFFFF;
+  --bg-subtle: #FAFAFC;
+  --bg-card: #F4F5F8;
+  --border-hairline: #E5E7EB;
+  --border-medium: #D1D5DB;
+  
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-caption: #94A3B8;
+
+  /* Typography System */
+  --font-display: 'Radio Canada Big', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-numeral: 'Space Grotesk', monospace;
+
+  /* Layout Spacing */
+  --sidebar-width: 280px;
+  --header-height: 56px;
+  --content-max-width: 840px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--blue-orchid);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: #1A28D4;
+}
+
+/* Page Typography System */
+.page-header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.page-category {
+  font-family: var(--font-numeral);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blue-orchid);
+  margin-bottom: 0.75rem;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.page-lead {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 720px;
+  font-weight: 400;
+}
+
+.doc-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose {
+  font-size: 1.03125rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 720px;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Edge-to-Edge Blue Cover Banner */
+.doc-cover-banner {
+  width: calc(100% + 8rem);
+  margin-left: -4rem;
+  margin-right: -4rem;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  background-color: #3343FF;
+  margin-bottom: 3.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-hairline);
+  display: block;
+  line-height: 0;
+  font-size: 0;
+  position: relative;
+}
+
+.doc-cover-banner .cover-hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none;
+  outline: none;
+  object-fit: cover;
+  object-position: top;
+}
+
+.cover-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.cover-text-overlay .doc-container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  padding-top: 0 !important;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.cover-text-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   Topic Card Chamfered Boundary (Angled Cut Corner matching original screenshot)
+   ========================================================================== */
+.topic-card {
+  display: block;
+  position: relative;
+  padding: 2.25rem 1.75rem 2rem 1.75rem;
+  background-color: #DCE2EA; /* Outer boundary color */
+  text-decoration: none;
+  border-radius: 0 !important;
+  border: none !important;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 44px),
+    calc(100% - 44px) 100%,
+    0 100%
+  );
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+  z-index: 1;
+}
+
+/* Inner white fill leaving an exact 1.5px hairline boundary with angled cut */
+.topic-card::before {
+  content: '';
+  position: absolute;
+  top: 1.5px;
+  left: 1.5px;
+  right: 1.5px;
+  bottom: 1.5px;
+  background-color: #FFFFFF;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 43px),
+    calc(100% - 43px) 100%,
+    0 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+  transition: background-color 0.2s ease;
+}
+
+.topic-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.topic-card:hover {
+  transform: translateY(-2px);
+  background-color: #3343FF !important;
+}
+
+.topic-card:hover::before {
+  background-color: #3343FF !important;
+}
+
+.topic-card-num {
+  font-family: var(--font-numeral);
+  font-size: 0.75rem;
+  color: var(--blue-orchid);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.topic-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.topic-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.topic-card:hover .topic-card-num,
+.topic-card:hover .topic-card-title,
+.topic-card:hover .topic-card-desc {
+  color: #FFFFFF !important;
+}
+
+/* Original Download Brochure CTA button */
+.btn-download-brochure {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.6rem 1.1rem;
+  border-radius: 0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  word-break: keep-all;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-download-brochure:hover {
+  background-color: var(--blue-orchid);
+  color: #FFFFFF;
+  border-color: var(--blue-orchid);
+  box-shadow: 0 6px 16px rgba(51, 67, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Original Type specimen and downloads table */
+.type-specimen-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+}
+
+.type-specimen-table th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-numeral);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-hairline);
+  letter-spacing: 0.05em;
+}
+
+.type-specimen-table td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border-hairline);
+  color: var(--text-primary);
+}
+
+.inline-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #E9EBFF;
+  color: var(--blue-orchid);
+  border: 1px solid #D6DAFF;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.inline-download-btn:hover {
+  background-color: var(--blue-orchid);
+  color: #FFFFFF;
+  border-color: var(--blue-orchid);
+}
+
+/* Footer Previous/Next Navigation */
+.doc-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.footer-nav-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.footer-nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.footer-nav-link.next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.footer-nav-label {
+  font-family: var(--font-numeral);
+  font-size: 0.75rem;
+  color: var(--text-caption);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-nav-title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
