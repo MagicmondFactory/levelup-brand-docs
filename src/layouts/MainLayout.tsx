@@ -53,8 +53,8 @@ export function MainLayout() {
 
         {/* Main Content Area */}
         <main className={`flex-1 min-w-0 bg-white relative pb-24 ${location.pathname === '/' ? 'px-0' : 'px-6 sm:px-16'}`}>
-          {/* Top-Right Action CTA */}
-          <div className="absolute top-6 right-6 sm:right-16 z-30">
+          {/* Top-Right Action CTA (Desktop only; on mobile it is in the MobileTopBar) */}
+          <div className="hidden lg:block absolute top-6 right-6 sm:right-16 z-30">
             <a
               href={BROCHURE_URL}
               target="_blank"
