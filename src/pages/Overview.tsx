@@ -53,7 +53,7 @@ export default function Overview() {
             <div className="p-5 border border-[#E5E7EB] bg-[#FAFAFC]">
               <div className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] mb-1">RULE 03</div>
               <h4 className="font-['Radio_Canada_Big'] text-base font-bold text-[#0F172A] mb-1">Pure Color Ramps</h4>
-              <p className="text-sm text-[#475569]">Use Blue Orchid as core energy and Electric Green for strategic emphasis. Never add arbitrary colors.</p>
+              <p className="text-sm text-[#475569]">Use Blue Orchid as core energy, Electric Green &amp; Pitch Green for football contexts, and Trophy Gold for cricket. Never add arbitrary colors.</p>
             </div>
 
             <div className="p-5 border border-[#E5E7EB] bg-[#FAFAFC]">

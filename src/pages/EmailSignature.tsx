@@ -159,9 +159,9 @@ export default function EmailSignature() {
         <div className="lg:col-span-7 space-y-4">
           <div className="p-6 bg-white border border-[#E5E7EB] shadow-sm">
             {/* Action Bar */}
-            <div className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E7EB]">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-[#E5E7EB]">
               {/* Tabs */}
-              <div className="inline-flex items-center gap-1 bg-[#FAFAFC] p-1 border border-[#E5E7EB] shrink-0">
+              <div className="inline-flex items-center gap-1 bg-[#FAFAFC] p-1 border border-[#E5E7EB] shrink-0 self-start">
                 <button
                   type="button"
                   onClick={() => setActiveTab('preview')}
@@ -189,11 +189,11 @@ export default function EmailSignature() {
               </div>
 
               {/* Action Buttons */}
-              <div className="inline-flex items-center gap-2 shrink-0">
+              <div className="flex flex-wrap items-center gap-2">
                 <button
                   type="button"
                   onClick={copyRichSignature}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#3343FF] hover:bg-[#1A28D4] text-white text-xs font-semibold whitespace-nowrap transition-colors shadow-sm shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 bg-[#3343FF] hover:bg-[#1A28D4] text-white text-xs font-semibold whitespace-nowrap transition-colors shadow-sm"
                 >
                   {copiedRich ? <Check className="w-3.5 h-3.5 shrink-0" /> : <Copy className="w-3.5 h-3.5 shrink-0 text-white" />}
                   <span>{copiedRich ? 'Copied Signature!' : 'Copy Signature'}</span>
@@ -202,7 +202,7 @@ export default function EmailSignature() {
                 <button
                   type="button"
                   onClick={copyRawHtml}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-white hover:bg-[#FAFAFC] border border-[#E5E7EB] text-[#0F172A] text-xs font-semibold whitespace-nowrap transition-colors shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 bg-white hover:bg-[#FAFAFC] border border-[#E5E7EB] text-[#0F172A] text-xs font-semibold whitespace-nowrap transition-colors"
                 >
                   {copiedHtml ? <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" /> : <Code className="w-3.5 h-3.5 shrink-0" />}
                   <span>{copiedHtml ? 'Copied HTML!' : 'Copy HTML'}</span>

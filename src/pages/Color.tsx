@@ -103,10 +103,82 @@ export default function Color() {
       {/* Section 2: Strategic Accent Palette */}
       <section id="accent" className="doc-section">
         <h2 className="section-title">Strategic Accent Palette</h2>
+        <div className="prose">
+          <p>
+            Accent colors are used selectively for proof points, metrics emphasis, and specific sports contexts. Pitch Green is dedicated to Football presentation decks and pitch collateral, Electric Green for performance conversion metrics, and Trophy Gold for cricket decks and championship achievements.
+          </p>
+        </div>
+
+        {/* Pitch Green (Football Decks & Sports Context) */}
+        <div className="border border-[#E5E7EB] overflow-hidden bg-white mt-6">
+          <div className="h-40 p-6 bg-[#014E3D] text-white flex items-end justify-between">
+            <div>
+              <span className="font-['Space_Grotesk'] text-xs font-bold bg-white/15 px-2.5 py-1">
+                FOOTBALL DECKS &amp; SPORTS CONTEXT
+              </span>
+            </div>
+            {/* Football Icon */}
+            <div className="bg-white/10 p-2.5 flex items-center justify-center backdrop-blur-sm border border-white/20">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#A6E35F" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 7.5 15.5 10 14.2 14.5 9.8 14.5 8.5 10" fill="#A6E35F" fillOpacity="0.35"></polygon>
+                <line x1="12" y1="7.5" x2="12" y2="2"></line>
+                <line x1="15.5" y1="10" x2="20.3" y2="8.5"></line>
+                <line x1="14.2" y1="14.5" x2="18.5" y2="18"></line>
+                <line x1="9.8" y1="14.5" x2="5.5" y2="18"></line>
+                <line x1="8.5" y1="10" x2="3.7" y2="8.5"></line>
+              </svg>
+            </div>
+          </div>
+          <div className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E7EB]">
+            <div>
+              <div className="flex items-center gap-2">
+                <div className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">Pitch Green &amp; Light Green</div>
+                <span className="text-xs font-bold text-[#014E3D] bg-[#A6E35F] px-2 py-0.5">
+                  ⚽ Football Category
+                </span>
+              </div>
+              <div className="text-xs text-[#64748B] mt-0.5">Dedicated palette for Football presentation decks &amp; pitch collateral</div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => copy('#014E3D')}
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] text-xs font-mono font-semibold transition-colors"
+              >
+                {copiedText === '#014E3D' ? 'COPIED!' : 'HEX #014E3D'}
+              </button>
+              <button
+                onClick={() => copy('#A6E35F')}
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] text-xs font-mono font-semibold transition-colors"
+              >
+                {copiedText === '#A6E35F' ? 'COPIED!' : 'HEX #A6E35F'}
+              </button>
+            </div>
+          </div>
+          {/* Pitch Green Ramp */}
+          <div className="p-5 bg-[#FAFAFC]">
+            <div className="font-['Space_Grotesk'] text-xs text-[#64748B] mb-2 font-bold uppercase">
+              Football Pitch Ramp System
+            </div>
+            <div className="grid grid-cols-3 h-12 overflow-hidden border border-[#E5E7EB] text-[11px] font-mono font-bold text-center">
+              <div onClick={() => copy('#013728')} className="bg-[#013728] text-white flex items-center justify-center cursor-pointer">
+                #013728 (Deep)
+              </div>
+              <div onClick={() => copy('#014E3D')} className="bg-[#014E3D] text-white flex items-center justify-center cursor-pointer">
+                #014E3D (Dark)
+              </div>
+              <div onClick={() => copy('#A6E35F')} className="bg-[#A6E35F] text-[#013728] flex items-center justify-center cursor-pointer">
+                #A6E35F (Electric)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Grid: Electric Green & Trophy Gold */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
           {/* Electric Green */}
           <div className="border border-[#E5E7EB] overflow-hidden bg-white">
-            <div className="h-32 p-5 bg-[#A6E35F] text-[#274604] flex items-end">
+            <div className="h-32 p-5 bg-[#A6E35F] text-[#274604] flex items-end justify-between">
               <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/10 px-2 py-1">ACCENT / PERFORMANCE</span>
             </div>
             <div className="p-5 flex items-center justify-between">
@@ -116,17 +188,18 @@ export default function Color() {
               </div>
               <button
                 onClick={() => copy('#A6E35F')}
-                className="px-3 py-1.5 bg-[#F4F5F8] text-[#0F172A] text-xs font-mono font-semibold"
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] text-xs font-mono font-semibold transition-colors"
               >
-                #A6E35F
+                {copiedText === '#A6E35F' ? 'COPIED!' : '#A6E35F'}
               </button>
             </div>
           </div>
 
           {/* Trophy Gold */}
           <div className="border border-[#E5E7EB] overflow-hidden bg-white">
-            <div className="h-32 p-5 bg-[#FFC845] text-[#997F3D] flex items-end">
+            <div className="h-32 p-5 bg-[#FFC845] text-[#0F172A] flex items-end justify-between">
               <span className="font-['Space_Grotesk'] text-xs font-bold bg-black/10 px-2 py-1">ACCENT / CRICKET</span>
+              <span className="text-xs font-bold text-[#0F172A] bg-black/10 px-2 py-0.5">🏏 Cricket</span>
             </div>
             <div className="p-5 flex items-center justify-between">
               <div>
@@ -135,9 +208,9 @@ export default function Color() {
               </div>
               <button
                 onClick={() => copy('#FFC845')}
-                className="px-3 py-1.5 bg-[#F4F5F8] text-[#0F172A] text-xs font-mono font-semibold"
+                className="px-3 py-1.5 bg-[#F4F5F8] hover:bg-[#E5E7EB] text-[#0F172A] text-xs font-mono font-semibold transition-colors"
               >
-                #FFC845
+                {copiedText === '#FFC845' ? 'COPIED!' : '#FFC845'}
               </button>
             </div>
           </div>
