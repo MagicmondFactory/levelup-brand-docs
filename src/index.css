@@ -235,8 +235,8 @@ a:hover {
   clip-path: polygon(
     0 0,
     100% 0,
-    100% calc(100% - 26px),
-    calc(100% - 45px) 100%,
+    100% calc(100% - 29.5px),
+    calc(100% - 51px) 100%,
     0 100%
   );
   pointer-events: none;
