@@ -145,11 +145,11 @@ export const SEARCH_INDEX: SearchItem[] = [
     snippet: "Key stakeholder profiles across enterprise brands, sports federations, and creators."
   },
   {
-    title: "Corporate Applications & Collateral",
+    title: "Corporate Applications & Social Campaigns",
     category: "Applications",
-    url: "/applications#business-cards",
-    keywords: "applications business cards stationery social broadcast merchandise presentation",
-    snippet: "Standardized templates for print collateral, business cards, and broadcast lower-thirds."
+    url: "/applications",
+    keywords: "applications social media posts campaign pitch decks broadcast merchandise presentation",
+    snippet: "Standardized templates for social media campaigns, pitch decks, and broadcast lower-thirds."
   },
   {
     title: "Email Signature Generator & Code",

@@ -78,24 +78,24 @@ export default function Applications() {
         </div>
       </section>
 
-      {/* Section 3: Stationery & Pitch Decks (Matching user screenshot) */}
+      {/* Section 3: Social Posts & Pitch Decks */}
       <section id="stationery" className="doc-section">
-        <h2 className="section-title">Stationery &amp; Presentation Decks</h2>
+        <h2 className="section-title">Social Campaigns &amp; Presentation Decks</h2>
         <div className="prose">
-          <p>Physical collateral and digital presentation decks should communicate confidence through restraint:</p>
+          <p>Digital campaign creative and presentation decks should communicate confidence through bold layout and brand consistency:</p>
         </div>
 
         <div className="mt-6 flex flex-col gap-3">
-          {/* Business Cards */}
+          {/* Sample Social Media Posts */}
           <div className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
             <div className="p-6 border-b border-[#E5E7EB]">
-              <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-2">Business Cards Specification</h3>
+              <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-2">Sample Social Media Posts</h3>
               <p className="text-sm text-[#475569] leading-relaxed">
-                Front face: Deep Navy (<code>#070732</code>) with centered white LEVELUP wordmark. Reverse face: Premium white cardstock with contact details set in Geist 400 (10pt size, 14pt line-height).
+                Official 1:1 square campaign and highlight post templates. Features bold Radio Canada Big headlines, Space Grotesk metrics callouts, high-contrast sports photography, and approved brand palette styling.
               </p>
             </div>
             <div className="bg-[#FAFAFC] p-6 text-center border-b border-[#E5E7EB]">
-              <img src="/assets/images/business-card-spec.svg" alt="Official Business Card Spec Mockup" className="max-w-full h-auto mx-auto border border-[#E5E7EB]" />
+              <img src="/assets/images/business-card-spec.svg" alt="Sample Social Media Posts Mockup" className="max-w-full h-auto mx-auto border border-[#E5E7EB]" />
             </div>
           </div>
 
