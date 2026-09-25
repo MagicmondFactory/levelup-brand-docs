@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BRAND_COLLATERALS_URL } from '../utils/constants';
 
 export default function Applications() {
   return (
@@ -86,16 +87,26 @@ export default function Applications() {
         </div>
 
         <div className="mt-6 flex flex-col gap-3">
-          {/* Sample Social Media Posts */}
+          {/* Sample Social Media Posts & Collaterals */}
           <div className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
-            <div className="p-6 border-b border-[#E5E7EB]">
-              <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-2">Sample Social Media Posts</h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                Official 1:1 square campaign and highlight post templates. Features bold Radio Canada Big headlines, Space Grotesk metrics callouts, high-contrast sports photography, and approved brand palette styling.
-              </p>
+            <div className="p-6 border-b border-[#E5E7EB] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-1">Brand Collaterals &amp; Social Creative</h3>
+                <p className="text-sm text-[#475569] leading-relaxed max-w-2xl">
+                  Official templates for business cards, letterheads, and 1:1 square social media campaign creative. Features approved brand typography, high-contrast assets, and dedicated sports domain palettes.
+                </p>
+              </div>
+              <a
+                href={BRAND_COLLATERALS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-download-btn shrink-0 self-start sm:self-center"
+              >
+                Open Collaterals Drive ↗
+              </a>
             </div>
             <div className="bg-[#FAFAFC] p-6 text-center border-b border-[#E5E7EB]">
-              <img src="/assets/images/business-card-spec.svg" alt="Sample Social Media Posts Mockup" className="max-w-full h-auto mx-auto border border-[#E5E7EB]" />
+              <img src="/assets/images/business-card-spec.svg" alt="Sample Social Media Posts and Collateral Mockup" className="max-w-full h-auto mx-auto border border-[#E5E7EB]" />
             </div>
           </div>
 
