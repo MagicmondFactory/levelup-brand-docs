@@ -108,18 +108,105 @@ export default function Logo() {
           <p>The six strict rules for brand mark integrity across all internal and partner communications:</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {MISUSE_RULES.map((item, idx) => (
-            <div key={idx} className="p-5 border border-[#E5E7EB] bg-[#FAFAFC]">
-              <div className="font-['Space_Grotesk'] text-xs font-bold text-[#DC2626] mb-1 uppercase">
-                RULE 0{idx + 1}
+            <div key={idx} className="border border-[#E5E7EB] bg-white rounded-none overflow-hidden flex flex-col">
+              {/* Visual preview box representing the violation */}
+              <div className={`relative h-44 flex items-center justify-center overflow-hidden border-b border-[#E5E7EB] ${
+                idx === 3 ? "bg-[#0b1220]" : "bg-[#F8FAFC]"
+              }`}>
+                {/* DO NOT badge watermark */}
+                <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2 py-0.5 bg-[#FEE2E2] text-[#DC2626] text-[11px] font-bold font-['Space_Grotesk'] tracking-wider rounded">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                  DON&apos;T
+                </div>
+
+                {/* Case 01: Distort or Stretch */}
+                {idx === 0 && (
+                  <div className="flex flex-col items-center">
+                    <img 
+                      src="/assets/logos/LEVELUP.svg" 
+                      alt="Distorted Logo" 
+                      className="w-56 h-7 scale-y-[1.8] scale-x-[0.75] object-contain opacity-80" 
+                    />
+                  </div>
+                )}
+
+                {/* Case 02: Recolor Unapproved */}
+                {idx === 1 && (
+                  <div className="flex flex-col items-center">
+                    <div 
+                      className="w-52 h-10 [mask-image:url(/assets/logos/LEVELUP.svg)] [mask-repeat:no-repeat] [mask-position:center] [mask-size:contain]"
+                      style={{ background: 'linear-gradient(90deg, #FF007A 0%, #FF8A00 50%, #00FF66 100%)' }}
+                    />
+                  </div>
+                )}
+
+                {/* Case 03: Crowd Clearspace */}
+                {idx === 2 && (
+                  <div className="relative border border-dashed border-[#DC2626]/60 p-1 flex items-center justify-center">
+                    <span className="absolute -top-3 left-1 text-[9px] font-['Space_Grotesk'] font-bold text-[#DC2626] bg-white px-1">TEXT OVERLAPPING</span>
+                    <img src="/assets/logos/LEVELUP.svg" alt="Crowded Logo" className="h-8 w-auto" />
+                    <span className="absolute right-0 bottom-0 text-[11px] font-bold text-[#DC2626] bg-[#FEE2E2] px-1">SPORTS MEDIA 2026</span>
+                  </div>
+                )}
+
+                {/* Case 04: Low Contrast */}
+                {idx === 3 && (
+                  <div className="flex flex-col items-center">
+                    {/* Navy logo placed directly on dark navy/black background with no contrast container */}
+                    <img 
+                      src="/assets/logos/LEVELUP.svg" 
+                      alt="Low Contrast Logo" 
+                      className="h-8 w-auto opacity-40 brightness-50" 
+                    />
+                  </div>
+                )}
+
+                {/* Case 05: Rotate or Tilt */}
+                {idx === 4 && (
+                  <div className="flex flex-col items-center rotate-[-18deg] transform">
+                    <img src="/assets/logos/LEVELUP.svg" alt="Rotated Logo" className="h-8 w-auto" />
+                  </div>
+                )}
+
+                {/* Case 06: Retype Wordmark */}
+                {idx === 5 && (
+                  <div className="flex flex-col items-center">
+                    <span className="text-2xl font-black font-sans tracking-widest text-[#070732] italic">
+                      LEVELUP
+                    </span>
+                  </div>
+                )}
               </div>
-              <h4 className="font-['Radio_Canada_Big'] text-base font-bold text-[#0F172A] mb-1">
-                {item.rule}
-              </h4>
-              <p className="text-xs text-[#475569] leading-relaxed">
-                {item.desc}
-              </p>
+
+              {/* Card Content & Explanation */}
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="font-['Space_Grotesk'] text-xs font-bold text-[#DC2626] mb-1 tracking-wider uppercase">
+                    RULE 0{idx + 1}
+                  </div>
+                  <h4 className="font-['Radio_Canada_Big'] text-base font-bold text-[#0F172A] mb-2">
+                    {item.rule}
+                  </h4>
+                  <p className="text-xs text-[#475569] leading-relaxed mb-3">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-[#F1F5F9] text-[11px] text-[#64748B]">
+                  <strong className="text-[#0F172A] font-medium">Why it matters: </strong>
+                  {idx === 0 && "Preserves geometric balance, stroke consistency, and optical weight."}
+                  {idx === 1 && "Protects recognized brand equity and avoids clashing with non-official campaign themes."}
+                  {idx === 2 && "Guarantees standalone visibility, brand stature, and immediate readability."}
+                  {idx === 3 && "Fails accessibility and legibility thresholds across screens and outdoor signage."}
+                  {idx === 4 && "The forward-italic slant is mathematically built into the glyphs; rotation skews the baseline."}
+                  {idx === 5 && "The wordmark features proprietary customized letterforms that standard fonts cannot replicate."}
+                </div>
+              </div>
             </div>
           ))}
         </div>

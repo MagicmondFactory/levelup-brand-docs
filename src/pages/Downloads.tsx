@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
-import { BROCHURE_URL } from '../utils/constants';
+import { BROCHURE_URL, LOGO_PACKAGE_URL, SOCIAL_MEDIA_DPS_URL } from '../utils/constants';
 
 const VECTOR_LOGOS = [
   { name: "LEVELUP Primary Wordmark", category: "Logo", format: "SVG", desc: "Primary brand logotype for web headers & collateral", link: "/assets/logos/LEVELUP.svg", isDownload: true },
   { name: "Standalone 'U' Symbol", category: "Logo", format: "SVG", desc: "Icon mark, social avatar, broadcast corner watermark", link: "/assets/logos/U.svg", isDownload: true },
   { name: "'UP' Secondary Mark", category: "Logo", format: "SVG", desc: "Secondary badge mark for merchandise & video lower-thirds", link: "/assets/logos/UP.svg", isDownload: true },
-  { name: "Complete Logo Folder (EPS / PNG)", category: "Package", format: "ZIP / DRIVE", desc: "Full EPS print vectors & transparent PNG asset suite", link: BROCHURE_URL, isExternal: true },
+  { name: "Brand Guide Book (Official Manual)", category: "Manual", format: "PDF / DRIVE", desc: "Official brand identity manual, rules, and guidelines documentation", link: BROCHURE_URL, isExternal: true },
+  { name: "Social Media DPs (Avatars / Icons)", category: "Social", format: "PNG / DRIVE", desc: "Curated suite of 3 official social media display pictures & profile avatars", link: SOCIAL_MEDIA_DPS_URL, isExternal: true },
+  { name: "Complete Logo Folder (EPS / PNG)", category: "Package", format: "ZIP / DRIVE", desc: "Full EPS print vectors & transparent PNG asset suite", link: LOGO_PACKAGE_URL, isExternal: true },
 ];
 
 const FONTS = [

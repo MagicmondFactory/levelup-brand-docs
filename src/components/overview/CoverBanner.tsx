@@ -7,7 +7,7 @@ export function CoverBanner() {
         className="cover-hero-img"
       />
       <div className="cover-text-overlay">
-        <div className="cover-content-aligned space-y-3 sm:space-y-4">
+        <div className="cover-content-aligned space-y-6 sm:space-y-8 md:space-y-10">
           {/* Primary Wordmark Logo */}
           <div className="flex items-center">
             <img

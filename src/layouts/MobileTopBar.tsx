@@ -32,7 +32,7 @@ export function MobileTopBar({ isOpen, onToggle }: MobileTopBarProps) {
         </NavLink>
       </div>
 
-      {/* Right: Download Brochure option in mobile top bar */}
+      {/* Right: Download Brand Guide option in mobile top bar */}
       <a
         href={BROCHURE_URL}
         target="_blank"
@@ -40,7 +40,7 @@ export function MobileTopBar({ isOpen, onToggle }: MobileTopBarProps) {
         className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#0F172A] bg-white border border-[#E5E7EB] shadow-sm hover:bg-[#3343FF] hover:text-white hover:border-[#3343FF] transition-all shrink-0"
       >
         <Download className="w-3.5 h-3.5 shrink-0" />
-        <span>Brochure</span>
+        <span>Brand Guide</span>
       </a>
     </div>
   );

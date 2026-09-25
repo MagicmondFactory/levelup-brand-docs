@@ -310,6 +310,13 @@ a:hover {
   text-decoration: none;
 }
 
+.btn-download-brochure svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2.25px;
+  flex-shrink: 0;
+}
+
 .btn-download-brochure:hover {
   background-color: var(--blue-orchid);
   color: #FFFFFF;
