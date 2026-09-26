@@ -279,7 +279,7 @@ export function BusinessCardGenerator() {
 
           {/* Cards Wrapper (Both mounted so html2canvas can capture accurately) */}
           <div className="w-full flex flex-col items-center justify-center py-4 bg-[#FAFAFC] border border-[#E5E7EB]">
-            {/* BACK FACE (Details & White background) */}
+            {/* BACK FACE (Exact Original Artwork directly from design) */}
             <div
               ref={backRef}
               style={{
@@ -288,51 +288,14 @@ export function BusinessCardGenerator() {
                 maxWidth: '100%',
                 aspectRatio: '1.75 / 1',
               }}
-              className="bg-white border border-[#E5E7EB] shadow-lg relative flex flex-col justify-between overflow-hidden select-none px-8 py-7"
+              className="bg-white border border-[#E5E7EB] shadow-lg relative overflow-hidden select-none p-0 flex items-center justify-center"
             >
-              {/* Top Section */}
-              <div className="flex justify-between items-start">
-                <div>
-                  <h2 className="font-['Radio_Canada_Big'] text-[26px] font-black text-[#070732] leading-[1.08] tracking-[-0.03em]">
-                    {card.firstName || 'JOSEPH'}<br />
-                    {card.lastName || 'BOU CHACRA'}
-                  </h2>
-                  <div className="font-['Radio_Canada_Big'] text-[11px] font-extrabold text-[#64748B] tracking-[0.06em] uppercase mt-2.5">
-                    {card.designation || 'FOUNDER & CEO'}
-                  </div>
-                </div>
-
-                {/* Top-Right UP Mark in pale lilac/periwinkle tint matching reference */}
-                <div className="w-20 pt-0.5">
-                  <svg viewBox="0 0 324 193" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-                    <path d="M162.557 129C160.191 143.067 155.312 154.79 147.918 164.167C140.524 173.545 130.912 180.579 119.082 185.268C107.4 189.957 88.7833 192.301 72.9609 192.301C51.8148 192.301 30.3145 187.99 18.1888 179.369C6.06316 170.596 4.36931e-06 157.512 0 140.118C1.00662e-06 137.849 0.074075 135.504 0.221944 133.084C0.517691 130.664 0.887323 128.168 1.33095 125.597L17.3014 33.4817H66.3218L62.9218 52.1571L23.0799 92.1189L59.7066 71.1959L50.3513 126.051C50.2034 127.261 50.0556 128.471 49.9078 129.681C49.7599 130.891 49.6862 132.101 49.6862 133.311C49.6862 139.815 51.4607 145.034 55.0097 148.966C58.7066 152.899 69.264 154.865 76.9534 154.865C85.9737 154.865 98.0837 152.142 103.555 146.697C109.026 141.252 112.502 134.37 113.981 126.051L129.672 31.2531L184.452 0L162.557 129Z" fill="#E8EBFC"/>
-                    <path d="M281.384 33.4817C289.96 33.4817 297.354 35.3722 303.565 39.1536C309.924 42.7837 314.877 47.9267 318.426 54.5819C321.975 61.2372 323.75 68.8757 323.75 77.4973C323.75 86.1189 322.345 94.2112 319.536 101.774C316.874 109.186 312.955 115.69 307.78 121.286C302.752 126.883 296.689 131.269 289.591 134.445C282.641 137.622 274.803 139.21 266.079 139.21H223.713L215.062 189.579H166.041L181.108 102.671H230.147L230.145 102.681H255.654C259.794 102.681 263.121 101.774 265.635 99.9589C268.297 98.1439 270.219 95.7237 271.402 92.6986C272.733 89.6735 273.399 86.3456 273.399 82.7155C273.399 78.7829 272.216 75.7577 269.85 73.6401C267.632 71.5226 265.554 70.9148 259.625 70.9333H237.834V70.9148H186.673L193.102 33.4817H281.384Z" fill="#E8EBFC"/>
-                  </svg>
-                </div>
-              </div>
-
-              {/* Full-width Divider */}
-              <div className="w-full border-t border-[#E5E7EB] my-2"></div>
-
-              {/* Bottom Contact List */}
-              <div className="w-full space-y-2 text-[10.5px] font-['Radio_Canada_Big']">
-                <div className="flex justify-between items-center border-b border-[#F1F5F9] pb-1.5">
-                  <span className="font-extrabold text-[#334155] tracking-[0.08em] uppercase text-[9.5px]">EMAIL</span>
-                  <span className="font-bold text-[#0F172A] tracking-[0.02em]">{card.email || 'JOSEPH_15@LEVELUP.AI'}</span>
-                </div>
-                <div className="flex justify-between items-center border-b border-[#F1F5F9] pb-1.5">
-                  <span className="font-extrabold text-[#334155] tracking-[0.08em] uppercase text-[9.5px]">CONTACT</span>
-                  <span className="font-bold text-[#0F172A] tracking-[0.02em]">{card.contact || '+971 - 965-4558-154'}</span>
-                </div>
-                <div className="flex justify-between items-center border-b border-[#F1F5F9] pb-1.5">
-                  <span className="font-extrabold text-[#334155] tracking-[0.08em] uppercase text-[9.5px]">WEBSITE</span>
-                  <span className="font-bold text-[#0F172A] tracking-[0.02em]">{card.website || 'LEVELUPMEDIA.AI'}</span>
-                </div>
-                <div className="flex justify-between items-center pt-0.5">
-                  <span className="font-extrabold text-[#334155] tracking-[0.08em] uppercase text-[9.5px]">ADDRESS</span>
-                  <span className="font-bold text-[#0F172A] tracking-[0.02em]">{card.address || 'TOWER 6, PALM BEACH, DUBAI (UAE)'}</span>
-                </div>
-              </div>
+              <img
+                src="/assets/images/business-card-back.png"
+                alt="LevelUp Business Card Back Face"
+                className="w-full h-full object-cover block"
+                crossOrigin="anonymous"
+              />
             </div>
 
             {/* FRONT FACE (Exact Original Artwork directly from design PDF) */}
@@ -358,9 +321,9 @@ export function BusinessCardGenerator() {
             <div className="mt-3 text-[11px] text-[#64748B] font-['Space_Grotesk'] flex items-center gap-3">
               <span>Standard Size: 89mm × 51mm (3.5&quot; × 2&quot;)</span>
               <span>•</span>
-              <span>Font: Radio Canada Big</span>
+              <span>Exact Artwork Vector Spec</span>
               <span>•</span>
-              <span>Vector Print Precision</span>
+              <span>Print Ready (PDF / JPEG)</span>
             </div>
           </div>
         </div>
