@@ -22,74 +22,43 @@ export default function Logo() {
         </p>
       </header>
 
-      {/* Section 1: Primary Marks & Inline Downloads */}
+      {/* Section 1: Primary Wordmark */}
       <section id="wordmark" className="doc-section">
-        <h2 className="section-title">Primary Assets</h2>
-        <div className="prose">
-          <p>Use the official vector files supplied below. Never approximate, redraw, or alter the logotype geometry.</p>
+        <div className="flex items-center justify-between flex-wrap gap-4 mb-2">
+          <div>
+            <span className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] uppercase tracking-wider">PRIMARY SIGNATURE</span>
+            <h2 className="section-title !mb-1">LEVELUP Wordmark</h2>
+          </div>
+          <a href="/assets/logos/LEVELUP.svg" download="LEVELUP.svg" className="inline-download-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Master SVG
+          </a>
+        </div>
+        <div className="prose mb-6">
+          <p>
+            The horizontal LEVELUP logotype is the primary brand signature for web headers, official communications, corporate stationery, and partner lockups. Never retype, redraw, or stretch.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
-          {/* Primary Wordmark */}
-          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
-            <div className="p-10 flex items-center justify-center bg-[#070732] min-h-[170px]">
-              <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Wordmark" className="h-9 w-auto brightness-0 invert" />
-            </div>
-            <div className="p-4 flex items-center justify-between bg-white border-t border-[#E5E7EB]">
-              <div>
-                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A]">LEVELUP Wordmark</div>
-                <div className="text-[11px] text-[#64748B]">Primary signature (Vector SVG)</div>
-              </div>
-              <a href="/assets/logos/LEVELUP.svg" download="LEVELUP.svg" className="inline-download-btn">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                SVG
-              </a>
-            </div>
+        {/* Master Showcase Box */}
+        <div className="border border-[#E5E7EB] bg-white overflow-hidden mb-6">
+          <div className="p-12 flex items-center justify-center bg-[#070732] min-h-[200px]">
+            <img src="/assets/logos/LEVELUP-white.svg" alt="LevelUp Wordmark" className="h-10 md:h-12 w-auto" />
           </div>
-
-          {/* Standalone U Symbol */}
-          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
-            <div className="p-10 flex items-center justify-center bg-[#070732] min-h-[170px]">
-              <img src="/assets/logos/U.svg" alt="LevelUp U Symbol" className="h-12 w-auto brightness-0 invert" />
-            </div>
-            <div className="p-4 flex items-center justify-between bg-white border-t border-[#E5E7EB]">
-              <div>
-                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A]">Icon Type #1: &apos;U&apos;</div>
-                <div className="text-[11px] text-[#64748B]">App mark &amp; favicon (SVG)</div>
-              </div>
-              <a href="/assets/logos/U.svg" download="U.svg" className="inline-download-btn">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                SVG
-              </a>
-            </div>
-          </div>
-
-          {/* Icon Type #2: 'UP' Symbol */}
-          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
-            <div className="p-10 flex items-center justify-center bg-[#070732] min-h-[170px]">
-              <img src="/assets/logos/UP.svg" alt="LevelUp UP Symbol" className="h-12 w-auto brightness-0 invert" />
-            </div>
-            <div className="p-4 flex items-center justify-between bg-white border-t border-[#E5E7EB]">
-              <div>
-                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A]">Icon Type #2: &apos;UP&apos;</div>
-                <div className="text-[11px] text-[#64748B]">Secondary mark &amp; badge (SVG)</div>
-              </div>
-              <a href="/assets/logos/UP.svg" download="UP.svg" className="inline-download-btn">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                SVG
-              </a>
-            </div>
+          <div className="p-4 flex items-center justify-between bg-white border-t border-[#E5E7EB] text-xs text-[#64748B]">
+            <span>Master Horizontal Vector Signature</span>
+            <span className="font-['Space_Grotesk'] font-medium text-[#0F172A]">Format: Vector SVG / EPS / PNG</span>
           </div>
         </div>
 
-        {/* Wordmark Colour Versions & Downloads */}
-        <div className="mt-8 border border-[#E5E7EB] bg-white">
+        {/* Wordmark Color Versions */}
+        <div className="border border-[#E5E7EB] bg-white">
           <div className="p-5 border-b border-[#E5E7EB]">
             <h3 className="font-['Radio_Canada_Big'] text-base font-bold text-[#0F172A]">
-              Wordmark &amp; Icon Color Versions (Official Drive Downloads)
+              Wordmark Color Versions &amp; Drive Packages
             </h3>
             <p className="text-xs text-[#475569] mt-0.5">
-              Production asset packages provided across all three primary background modes: Blue, Dark Navy, and Light.
+              Production asset packages for the horizontal wordmark in Blue Orchid, Dark Navy, and Light backgrounds.
             </p>
           </div>
 
@@ -98,13 +67,13 @@ export default function Logo() {
             <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
               <div>
                 <div className="h-28 bg-[#3343FF] flex items-center justify-center p-6 border border-[#2333E8] mb-4">
-                  <img src="/assets/logos/LEVELUP-white.svg" alt="Blue Version" className="h-7 w-auto drop-shadow-sm" />
+                  <img src="/assets/logos/LEVELUP-white.svg" alt="Wordmark Blue Version" className="h-7 w-auto drop-shadow-sm" />
                 </div>
                 <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
-                  Blue Version
+                  Wordmark — Blue Version
                 </div>
                 <p className="text-xs text-[#475569] leading-relaxed mb-4">
-                  Primary electric brand version on Blue Orchid (<code>#3343FF</code>) fields.
+                  Electric brand version on Blue Orchid (<code>#3343FF</code>) fields and digital banners.
                 </p>
               </div>
               <a
@@ -121,13 +90,13 @@ export default function Logo() {
             <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
               <div>
                 <div className="h-28 bg-[#070732] flex items-center justify-center p-6 border border-[#0F172A] mb-4">
-                  <img src="/assets/logos/LEVELUP-white.svg" alt="Dark Version" className="h-7 w-auto" />
+                  <img src="/assets/logos/LEVELUP-white.svg" alt="Wordmark Dark Version" className="h-7 w-auto" />
                 </div>
                 <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
-                  Dark Version
+                  Wordmark — Dark Version
                 </div>
                 <p className="text-xs text-[#475569] leading-relaxed mb-4">
-                  High-contrast inverted logotype for dark navy (<code>#070732</code>) broadcast &amp; nighttime media.
+                  Inverted white logotype for dark navy (<code>#070732</code>) broadcast &amp; nighttime media.
                 </p>
               </div>
               <a
@@ -144,13 +113,13 @@ export default function Logo() {
             <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
               <div>
                 <div className="h-28 bg-white flex items-center justify-center p-6 border border-[#E5E7EB] mb-4">
-                  <img src="/assets/logos/LEVELUP.svg" alt="Light Version" className="h-7 w-auto" />
+                  <img src="/assets/logos/LEVELUP.svg" alt="Wordmark Light Version" className="h-7 w-auto" />
                 </div>
                 <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
-                  Light Version
+                  Wordmark — Light Version
                 </div>
                 <p className="text-xs text-[#475569] leading-relaxed mb-4">
-                  Standard dark navy signature on crisp white (<code>#FFFFFF</code>) or pale light stationery backgrounds.
+                  Standard dark navy signature on crisp white (<code>#FFFFFF</code>) or light stationery.
                 </p>
               </div>
               <a
@@ -161,6 +130,166 @@ export default function Logo() {
               >
                 Download Light Drive ↗
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Icon Type #2: 'UP' Symbol (Separate Dedicated Section) */}
+      <section id="icon-up" className="doc-section">
+        <div className="flex items-center justify-between flex-wrap gap-4 mb-2">
+          <div>
+            <span className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] uppercase tracking-wider">SECONDARY BRAND MARK</span>
+            <h2 className="section-title !mb-1">Icon Type #2: &apos;UP&apos;</h2>
+          </div>
+          <a href="/assets/logos/UP.svg" download="UP.svg" className="inline-download-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download UP SVG
+          </a>
+        </div>
+        <div className="prose mb-6">
+          <p>
+            The <strong>&apos;UP&apos; Icon</strong> is an autonomous shorthand brand mark. Distinct from the full horizontal wordmark, it is optimized for square avatars, broadcast corner bugs, merchandise embroidery, and compact badge placements.
+          </p>
+        </div>
+
+        {/* UP Master Showcase Box */}
+        <div className="border border-[#E5E7EB] bg-white overflow-hidden mb-6">
+          <div className="p-12 flex items-center justify-center bg-[#070732] min-h-[200px]">
+            <img src="/assets/logos/UP.svg" alt="LevelUp UP Mark" className="h-16 w-auto brightness-0 invert" />
+          </div>
+          <div className="p-4 flex items-center justify-between bg-white border-t border-[#E5E7EB] text-xs text-[#64748B]">
+            <span>Compact Shorthand &apos;UP&apos; Badge &amp; App Glyph</span>
+            <span className="font-['Space_Grotesk'] font-medium text-[#0F172A]">Format: Vector SVG / Multi-color Suites</span>
+          </div>
+        </div>
+
+        {/* UP Icon Color Versions */}
+        <div className="border border-[#E5E7EB] bg-white">
+          <div className="p-5 border-b border-[#E5E7EB]">
+            <h3 className="font-['Radio_Canada_Big'] text-base font-bold text-[#0F172A]">
+              Icon Type #2 &apos;UP&apos; Color Versions (Official Drive Downloads)
+            </h3>
+            <p className="text-xs text-[#475569] mt-0.5">
+              Production asset packages for the &apos;UP&apos; icon across Blue Orchid, Dark Navy, and Light background suites.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#E5E7EB]">
+            {/* UP Blue Version */}
+            <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
+              <div>
+                <div className="h-28 bg-[#3343FF] flex items-center justify-center p-6 border border-[#2333E8] mb-4">
+                  <img src="/assets/logos/UP.svg" alt="UP Icon Blue Version" className="h-12 w-auto brightness-0 invert" />
+                </div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
+                  UP Icon — Blue Version
+                </div>
+                <p className="text-xs text-[#475569] leading-relaxed mb-4">
+                  Electric orchid blue edition for digital brand badges, app icons, and social stories.
+                </p>
+              </div>
+              <a
+                href={LOGO_BLUE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-download-btn w-full justify-center text-center"
+              >
+                Download Blue Drive ↗
+              </a>
+            </div>
+
+            {/* UP Dark Version */}
+            <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
+              <div>
+                <div className="h-28 bg-[#070732] flex items-center justify-center p-6 border border-[#0F172A] mb-4">
+                  <img src="/assets/logos/UP.svg" alt="UP Icon Dark Version" className="h-12 w-auto brightness-0 invert" />
+                </div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
+                  UP Icon — Dark Version
+                </div>
+                <p className="text-xs text-[#475569] leading-relaxed mb-4">
+                  High-contrast dark edition for deep navy interfaces, broadcast bugs, and dark mode screens.
+                </p>
+              </div>
+              <a
+                href={LOGO_DARK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-download-btn w-full justify-center text-center"
+              >
+                Download Dark Drive ↗
+              </a>
+            </div>
+
+            {/* UP Light Version */}
+            <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
+              <div>
+                <div className="h-28 bg-white flex items-center justify-center p-6 border border-[#E5E7EB] mb-4">
+                  <img src="/assets/logos/UP.svg" alt="UP Icon Light Version" className="h-12 w-auto" />
+                </div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
+                  UP Icon — Light Version
+                </div>
+                <p className="text-xs text-[#475569] leading-relaxed mb-4">
+                  Navy &apos;UP&apos; glyph for print collateral, white merchandise tags, and light UI.
+                </p>
+              </div>
+              <a
+                href={LOGO_LIGHT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-download-btn w-full justify-center text-center"
+              >
+                Download Light Drive ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Icon Type #1: 'U' Symbol */}
+      <section id="icon-u" className="doc-section">
+        <div className="flex items-center justify-between flex-wrap gap-4 mb-2">
+          <div>
+            <span className="font-['Space_Grotesk'] text-xs font-bold text-[#3343FF] uppercase tracking-wider">APP GLYPH &amp; FAVICON</span>
+            <h2 className="section-title !mb-1">Icon Type #1: &apos;U&apos; Symbol</h2>
+          </div>
+          <a href="/assets/logos/U.svg" download="U.svg" className="inline-download-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download U SVG
+          </a>
+        </div>
+        <div className="prose mb-6">
+          <p>
+            The standalone geometric <strong>&apos;U&apos; Symbol</strong> is the foundational core mark used as the browser favicon, mobile app icon anchor, and standard clearspace measurement unit.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="border border-[#E5E7EB] bg-white">
+            <div className="p-10 flex items-center justify-center bg-[#070732] min-h-[170px]">
+              <img src="/assets/logos/U.svg" alt="LevelUp U Symbol Dark BG" className="h-14 w-auto brightness-0 invert" />
+            </div>
+            <div className="p-4 bg-white border-t border-[#E5E7EB] flex items-center justify-between">
+              <div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A]">Dark BG Glyph</div>
+                <div className="text-[11px] text-[#64748B]">Inverted white stroke on dark navy</div>
+              </div>
+              <a href="/assets/logos/U.svg" download="U.svg" className="inline-download-btn">SVG</a>
+            </div>
+          </div>
+
+          <div className="border border-[#E5E7EB] bg-white">
+            <div className="p-10 flex items-center justify-center bg-white min-h-[170px]">
+              <img src="/assets/logos/U.svg" alt="LevelUp U Symbol Light BG" className="h-14 w-auto" />
+            </div>
+            <div className="p-4 bg-white border-t border-[#E5E7EB] flex items-center justify-between">
+              <div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A]">Light BG Glyph</div>
+                <div className="text-[11px] text-[#64748B]">Navy core stroke on clean white</div>
+              </div>
+              <a href="/assets/logos/U.svg" download="U.svg" className="inline-download-btn">SVG</a>
             </div>
           </div>
         </div>
