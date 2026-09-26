@@ -126,36 +126,41 @@ export default function Applications() {
           </div>
 
           <div className="p-6 lg:p-8 bg-[#FAFAFC] flex justify-center">
-            {/* Visual Letterhead Sheet Specimen */}
-            <div className="w-full max-w-[540px] bg-white border border-[#E5E7EB] shadow-sm p-8 sm:p-10 relative flex flex-col justify-between min-h-[460px] aspect-[1/1.414]">
-              {/* Header */}
-              <div className="flex justify-between items-start border-b border-[#E5E7EB] pb-6">
-                <div>
-                  <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Logo" className="h-6 w-auto" />
-                  <div className="font-['Space_Grotesk'] text-[10px] text-[#64748B] tracking-wider mt-2 uppercase">
-                    LevelUp Media FZ-LLC
+            {/* Visual Letterhead Top Specimen matching exact PDF */}
+            <div className="w-full max-w-[580px] bg-white border border-[#E5E7EB] shadow-md relative overflow-hidden">
+              {/* Blue accent stripe on the right edge */}
+              <div className="absolute top-0 right-0 bottom-0 w-2 bg-[#3343FF]"></div>
+
+              {/* Letterhead Top Header */}
+              <div className="px-8 sm:px-10 pt-9 pb-12 pr-12">
+                {/* Logo */}
+                <div className="mb-6">
+                  <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Logo" className="h-6 sm:h-7 w-auto block" />
+                </div>
+
+                {/* Hairline Divider */}
+                <div className="w-full border-t border-[#E5E7EB] mb-6"></div>
+
+                {/* Date Label */}
+                <div className="font-['Geist'] text-xs font-medium text-[#64748B]">
+                  Date
+                </div>
+
+                {/* Blank letter area hint */}
+                <div className="h-24 sm:h-32"></div>
+
+                {/* Footer Info preview at bottom */}
+                <div className="pt-8 border-t border-[#F1F5F9] flex flex-col sm:flex-row justify-between items-start sm:items-end text-[10px] text-[#64748B] font-['Geist'] gap-3">
+                  <div>
+                    <div className="text-[#0F172A] font-medium">Tower 6, Building 91,</div>
+                    <div>Palm beach, Dubai (UAE)</div>
+                  </div>
+                  <div className="text-left sm:text-right">
+                    <div>+971 55 1234567</div>
+                    <div>info@levelupmedia.ai</div>
+                    <div className="text-[#070732] font-semibold">levelupmedia.ai</div>
                   </div>
                 </div>
-                <div className="text-right text-[11px] font-['Space_Grotesk'] text-[#64748B]">
-                  <div>OFFICIAL CORRESPONDENCE</div>
-                  <div className="text-[#070732] font-bold">STATIONERY SPEC 2026</div>
-                </div>
-              </div>
-
-              {/* Body Placeholder Spec lines */}
-              <div className="space-y-4 my-8">
-                <div className="h-3 bg-[#F1F5F9] w-3/4 rounded-none"></div>
-                <div className="h-2.5 bg-[#F1F5F9] w-full rounded-none"></div>
-                <div className="h-2.5 bg-[#F1F5F9] w-full rounded-none"></div>
-                <div className="h-2.5 bg-[#F1F5F9] w-5/6 rounded-none"></div>
-                <div className="h-2.5 bg-[#F1F5F9] w-4/5 rounded-none"></div>
-              </div>
-
-              {/* Footer */}
-              <div className="border-t border-[#E5E7EB] pt-4 flex flex-col sm:flex-row justify-between text-[10px] font-['Geist'] text-[#64748B] gap-2">
-                <span>Tower 6, Palm Beach, Dubai (UAE)</span>
-                <span>contact@levelupmedia.ai</span>
-                <span className="font-semibold text-[#070732]">levelupmedia.ai</span>
               </div>
             </div>
           </div>

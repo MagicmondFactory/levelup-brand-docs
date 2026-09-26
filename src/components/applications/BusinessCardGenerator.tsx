@@ -26,7 +26,7 @@ const DEFAULT_CARD: BusinessCardData = {
 
 export function BusinessCardGenerator() {
   const [card, setCard] = useState<BusinessCardData>(DEFAULT_CARD);
-  const [activeSide, setActiveSide] = useState<'back' | 'front'>('back');
+  const [activeSide, setActiveSide] = useState<'front' | 'back'>('front');
   const [isExporting, setIsExporting] = useState(false);
 
   const frontRef = useRef<HTMLDivElement>(null);
@@ -256,16 +256,6 @@ export function BusinessCardGenerator() {
           {/* Side Switcher Tab */}
           <div className="flex items-center gap-1 p-1 bg-[#F1F5F9] mb-4 self-center">
             <button
-              onClick={() => setActiveSide('back')}
-              className={`px-4 py-1.5 text-xs font-bold transition-all ${
-                activeSide === 'back'
-                  ? 'bg-white text-[#0F172A] shadow-sm'
-                  : 'text-[#64748B] hover:text-[#0F172A]'
-              }`}
-            >
-              Back Face (Details)
-            </button>
-            <button
               onClick={() => setActiveSide('front')}
               className={`px-4 py-1.5 text-xs font-bold transition-all ${
                 activeSide === 'front'
@@ -273,7 +263,17 @@ export function BusinessCardGenerator() {
                   : 'text-[#64748B] hover:text-[#0F172A]'
               }`}
             >
-              Front Face (Navy Logo)
+              Front Face (Brand Mark)
+            </button>
+            <button
+              onClick={() => setActiveSide('back')}
+              className={`px-4 py-1.5 text-xs font-bold transition-all ${
+                activeSide === 'back'
+                  ? 'bg-white text-[#0F172A] shadow-sm'
+                  : 'text-[#64748B] hover:text-[#0F172A]'
+              }`}
+            >
+              Back Face (Details &amp; Name)
             </button>
           </div>
 
