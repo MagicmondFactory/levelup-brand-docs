@@ -132,7 +132,7 @@ export default function Applications() {
               <div className="absolute top-0 right-0 bottom-0 w-2 bg-[#3343FF]"></div>
 
               {/* Letterhead Top Header */}
-              <div className="px-8 sm:px-10 pt-9 pb-12 pr-12">
+              <div className="px-8 sm:px-10 pt-9 pb-20 pr-12">
                 {/* Logo */}
                 <div className="mb-6">
                   <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Logo" className="h-6 sm:h-7 w-auto block" />
@@ -144,22 +144,6 @@ export default function Applications() {
                 {/* Date Label */}
                 <div className="font-['Geist'] text-xs font-medium text-[#64748B]">
                   Date
-                </div>
-
-                {/* Blank letter area hint */}
-                <div className="h-24 sm:h-32"></div>
-
-                {/* Footer Info preview at bottom */}
-                <div className="pt-8 border-t border-[#F1F5F9] flex flex-col sm:flex-row justify-between items-start sm:items-end text-[10px] text-[#64748B] font-['Geist'] gap-3">
-                  <div>
-                    <div className="text-[#0F172A] font-medium">Tower 6, Building 91,</div>
-                    <div>Palm beach, Dubai (UAE)</div>
-                  </div>
-                  <div className="text-left sm:text-right">
-                    <div>+971 55 1234567</div>
-                    <div>info@levelupmedia.ai</div>
-                    <div className="text-[#070732] font-semibold">levelupmedia.ai</div>
-                  </div>
                 </div>
               </div>
             </div>
