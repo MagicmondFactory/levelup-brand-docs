@@ -126,26 +126,13 @@ export default function Applications() {
           </div>
 
           <div className="p-6 lg:p-8 bg-[#FAFAFC] flex justify-center">
-            {/* Visual Letterhead Top Specimen matching exact PDF */}
-            <div className="w-full max-w-[580px] bg-white border border-[#E5E7EB] shadow-md relative overflow-hidden">
-              {/* Blue accent stripe on the right edge */}
-              <div className="absolute top-0 right-0 bottom-0 w-2 bg-[#3343FF]"></div>
-
-              {/* Letterhead Top Header */}
-              <div className="px-8 sm:px-10 pt-9 pb-20 pr-12">
-                {/* Logo */}
-                <div className="mb-6">
-                  <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Logo" className="h-6 sm:h-7 w-auto block" />
-                </div>
-
-                {/* Hairline Divider */}
-                <div className="w-full border-t border-[#E5E7EB] mb-6"></div>
-
-                {/* Date Label */}
-                <div className="font-['Geist'] text-xs font-medium text-[#64748B]">
-                  Date
-                </div>
-              </div>
+            {/* Visual Letterhead Specimen with bottom boundary matching exact document */}
+            <div className="w-full max-w-[620px] bg-white border border-[#E5E7EB] shadow-md overflow-hidden">
+              <img 
+                src="/assets/images/letterhead-display.png" 
+                alt="LevelUp Official Corporate Letterhead" 
+                className="w-full h-auto block"
+              />
             </div>
           </div>
         </div>
