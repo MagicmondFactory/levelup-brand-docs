@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { 
-  LETTERHEAD_URL, 
   SAMPLE_CREATIVES_URL 
 } from '../utils/constants';
 import { BusinessCardGenerator } from '../components/applications/BusinessCardGenerator';
@@ -99,51 +98,13 @@ export default function Applications() {
           <BusinessCardGenerator />
         </div>
 
-        {/* 2. Official Corporate Letterhead */}
-        <div id="letterhead" className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
-          <div className="p-6 border-b border-[#E5E7EB] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-              <div className="flex items-center gap-2">
-                <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">
-                  2. Official Corporate Letterhead
-                </h3>
-                <span className="text-[10px] font-bold font-['Space_Grotesk'] px-2 py-0.5 bg-[#F4F5F8] text-[#475569]">
-                  STATIONERY
-                </span>
-              </div>
-              <p className="text-sm text-[#475569] leading-relaxed max-w-2xl mt-1">
-                Standard A4 / US Letter format with top-left LEVELUP master logo and clean structured footer typography for official correspondence, contracts, and press communications.
-              </p>
-            </div>
-            <a
-              href={LETTERHEAD_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-download-btn shrink-0 self-start sm:self-center"
-            >
-              Open Letterhead Drive ↗
-            </a>
-          </div>
-
-          <div className="p-6 lg:p-8 bg-[#FAFAFC] flex justify-center">
-            {/* Visual Letterhead Specimen with bottom boundary matching exact document */}
-            <div className="w-full max-w-[620px] bg-white border border-[#E5E7EB] shadow-md overflow-hidden">
-              <img 
-                src="/assets/images/letterhead-display.png" 
-                alt="LevelUp Official Corporate Letterhead" 
-                className="w-full h-auto block"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* 3. Sample Social Media Creatives */}
+        {/* 2. Sample Social Media Creatives */}
         <div id="sample-creatives" className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
           <div className="p-6 border-b border-[#E5E7EB] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">
-                  3. Sample Social Media Creatives
+                  2. Sample Social Media Creatives
                 </h3>
                 <span className="text-[10px] font-bold font-['Space_Grotesk'] px-2 py-0.5 bg-[#DEFFB0] text-[#274604]">
                   CAMPAIGNS
@@ -172,12 +133,12 @@ export default function Applications() {
           </div>
         </div>
 
-        {/* 4. Digital Pitch Decks & Sport-Specific Palettes */}
+        {/* 3. Digital Pitch Decks & Sport-Specific Palettes */}
         <div id="pitch-decks" className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
           <div className="p-6 border-b border-[#E5E7EB]">
             <div className="flex items-center gap-2">
               <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">
-                4. Digital Pitch Decks &amp; Sport-Specific Palettes
+                3. Digital Pitch Decks &amp; Sport-Specific Palettes
               </h3>
               <span className="text-[10px] font-bold font-['Space_Grotesk'] px-2 py-0.5 bg-[#FFE5A3] text-[#997F3D]">
                 PRESENTATIONS
