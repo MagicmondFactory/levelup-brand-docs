@@ -73,7 +73,7 @@ export function MainLayout() {
           {/* Dynamic Page Content */}
           {location.pathname === '/' ? (
             <Outlet />
-          ) : location.pathname === '/email-signature' ? (
+          ) : (location.pathname === '/email-signature' || location.pathname === '/applications') ? (
             <div className="w-full max-w-[1080px] mx-auto pt-8">
               <Outlet />
             </div>

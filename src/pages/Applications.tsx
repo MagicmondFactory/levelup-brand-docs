@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
-import { BRAND_COLLATERALS_URL } from '../utils/constants';
+import { 
+  LETTERHEAD_URL, 
+  SAMPLE_CREATIVES_URL 
+} from '../utils/constants';
+import { BusinessCardGenerator } from '../components/applications/BusinessCardGenerator';
 
 export default function Applications() {
   return (
@@ -79,53 +83,141 @@ export default function Applications() {
         </div>
       </section>
 
-      {/* Section 3: Social Posts & Pitch Decks */}
-      <section id="stationery" className="doc-section">
-        <h2 className="section-title">Social Campaigns &amp; Presentation Decks</h2>
-        <div className="prose">
-          <p>Digital campaign creative and presentation decks should communicate confidence through bold layout and brand consistency:</p>
+      {/* Section 3: Brand Collaterals & Stationery */}
+      <section id="collaterals" className="doc-section space-y-8">
+        <div>
+          <h2 className="section-title">Brand Collaterals &amp; Stationery</h2>
+          <div className="prose">
+            <p>
+              Divided specifications and direct download links for all official LevelUp Media corporate collaterals, print stationery, and marketing assets:
+            </p>
+          </div>
         </div>
 
-        <div className="mt-6 flex flex-col gap-3">
-          {/* Sample Social Media Posts & Collaterals */}
-          <div className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
-            <div className="p-6 border-b border-[#E5E7EB] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div>
-                <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-1">Brand Collaterals &amp; Social Creative</h3>
-                <p className="text-sm text-[#475569] leading-relaxed max-w-2xl">
-                  Official templates for business cards, letterheads, and 1:1 square social media campaign creative. Features approved brand typography, high-contrast assets, and dedicated sports domain palettes.
-                </p>
+        {/* 1. Interactive Business Card Generator */}
+        <div id="business-card">
+          <BusinessCardGenerator />
+        </div>
+
+        {/* 2. Official Corporate Letterhead */}
+        <div id="letterhead" className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
+          <div className="p-6 border-b border-[#E5E7EB] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">
+                  2. Official Corporate Letterhead
+                </h3>
+                <span className="text-[10px] font-bold font-['Space_Grotesk'] px-2 py-0.5 bg-[#F4F5F8] text-[#475569]">
+                  STATIONERY
+                </span>
               </div>
-              <a
-                href={BRAND_COLLATERALS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-download-btn shrink-0 self-start sm:self-center"
-              >
-                Open Collaterals Drive ↗
-              </a>
+              <p className="text-sm text-[#475569] leading-relaxed max-w-2xl mt-1">
+                Standard A4 / US Letter format with top-left LEVELUP master logo and clean structured footer typography for official correspondence, contracts, and press communications.
+              </p>
             </div>
-            <div className="bg-[#FAFAFC] p-6 text-center border-b border-[#E5E7EB]">
-              <img src="/assets/images/business-card-spec.svg" alt="Sample Social Media Posts and Collateral Mockup" className="max-w-full h-auto mx-auto border border-[#E5E7EB]" />
-            </div>
+            <a
+              href={LETTERHEAD_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-download-btn shrink-0 self-start sm:self-center"
+            >
+              Open Letterhead Drive ↗
+            </a>
           </div>
 
-          {/* Digital Pitch Decks (Matching screenshot exactly) */}
-          <div className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
-            <div className="p-6 border-b border-[#E5E7EB]">
-              <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A] mb-2">Digital Pitch Decks &amp; Sport-Specific Palettes</h3>
-              <p className="text-sm text-[#475569] leading-relaxed">
-                Built on 16:9 widescreen canvas, utilizing large Radio Canada Big headlines and Space Grotesk statistics with dedicated sport domain palettes:
+          <div className="p-6 lg:p-8 bg-[#FAFAFC] flex justify-center">
+            {/* Visual Letterhead Sheet Specimen */}
+            <div className="w-full max-w-[540px] bg-white border border-[#E5E7EB] shadow-sm p-8 sm:p-10 relative flex flex-col justify-between min-h-[460px] aspect-[1/1.414]">
+              {/* Header */}
+              <div className="flex justify-between items-start border-b border-[#E5E7EB] pb-6">
+                <div>
+                  <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Logo" className="h-6 w-auto" />
+                  <div className="font-['Space_Grotesk'] text-[10px] text-[#64748B] tracking-wider mt-2 uppercase">
+                    LevelUp Media FZ-LLC
+                  </div>
+                </div>
+                <div className="text-right text-[11px] font-['Space_Grotesk'] text-[#64748B]">
+                  <div>OFFICIAL CORRESPONDENCE</div>
+                  <div className="text-[#070732] font-bold">STATIONERY SPEC 2026</div>
+                </div>
+              </div>
+
+              {/* Body Placeholder Spec lines */}
+              <div className="space-y-4 my-8">
+                <div className="h-3 bg-[#F1F5F9] w-3/4 rounded-none"></div>
+                <div className="h-2.5 bg-[#F1F5F9] w-full rounded-none"></div>
+                <div className="h-2.5 bg-[#F1F5F9] w-full rounded-none"></div>
+                <div className="h-2.5 bg-[#F1F5F9] w-5/6 rounded-none"></div>
+                <div className="h-2.5 bg-[#F1F5F9] w-4/5 rounded-none"></div>
+              </div>
+
+              {/* Footer */}
+              <div className="border-t border-[#E5E7EB] pt-4 flex flex-col sm:flex-row justify-between text-[10px] font-['Geist'] text-[#64748B] gap-2">
+                <span>Tower 6, Palm Beach, Dubai (UAE)</span>
+                <span>contact@levelupmedia.ai</span>
+                <span className="font-semibold text-[#070732]">levelupmedia.ai</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Sample Social Media Creatives */}
+        <div id="sample-creatives" className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
+          <div className="p-6 border-b border-[#E5E7EB] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">
+                  3. Sample Social Media Creatives
+                </h3>
+                <span className="text-[10px] font-bold font-['Space_Grotesk'] px-2 py-0.5 bg-[#DEFFB0] text-[#274604]">
+                  CAMPAIGNS
+                </span>
+              </div>
+              <p className="text-sm text-[#475569] leading-relaxed max-w-2xl mt-1">
+                Curated library of 1:1 square highlight and statistics post creatives. Designed for Instagram, LinkedIn, and X feeds with bold type hierarchy and dynamic photography.
               </p>
-              <ul className="text-sm text-[#475569] leading-relaxed mt-2 pl-5 list-disc space-y-1">
-                <li><strong>Football Decks:</strong> Dark Green (Pitch Green <code>#014E3D</code>) and Light Green (Electric Green <code>#A6E35F</code>).</li>
-                <li><strong>Cricket Decks:</strong> Blue (<code>#3343FF</code>) and Yellow Gold (Trophy Gold <code>#FFC845</code>).</li>
-                <li><strong>Parent Company:</strong> Blue (<code>#3343FF</code>) and Light Green (<code>#A6E35F</code>).</li>
-              </ul>
             </div>
-            <div className="bg-[#FAFAFC] p-6 text-center">
-              <img src="/assets/images/application-card.svg" alt="Official Digital Application & Pitch Deck Spec Mockup" className="max-w-full h-auto mx-auto border border-[#E5E7EB]" />
+            <a
+              href={SAMPLE_CREATIVES_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-download-btn shrink-0 self-start sm:self-center"
+            >
+              Open Sample Creatives Drive ↗
+            </a>
+          </div>
+
+          <div className="bg-[#FAFAFC] p-6 text-center border-b border-[#E5E7EB]">
+            <img 
+              src="/assets/images/business-card-spec.svg" 
+              alt="Sample Social Media Creatives Showcase" 
+              className="max-w-full h-auto mx-auto border border-[#E5E7EB]" 
+            />
+          </div>
+        </div>
+
+        {/* 4. Digital Pitch Decks & Sport-Specific Palettes */}
+        <div id="pitch-decks" className="border border-[#E5E7EB] rounded-none overflow-hidden bg-white">
+          <div className="p-6 border-b border-[#E5E7EB]">
+            <div className="flex items-center gap-2">
+              <h3 className="font-['Radio_Canada_Big'] text-lg font-bold text-[#0F172A]">
+                4. Digital Pitch Decks &amp; Sport-Specific Palettes
+              </h3>
+              <span className="text-[10px] font-bold font-['Space_Grotesk'] px-2 py-0.5 bg-[#FFE5A3] text-[#997F3D]">
+                PRESENTATIONS
+              </span>
             </div>
+            <p className="text-sm text-[#475569] leading-relaxed mt-1">
+              Built on 16:9 widescreen canvas, utilizing large Radio Canada Big headlines and Space Grotesk statistics with dedicated sport domain palettes:
+            </p>
+            <ul className="text-sm text-[#475569] leading-relaxed mt-3 pl-5 list-disc space-y-1">
+              <li><strong>Football Decks:</strong> Dark Green (Pitch Green <code>#014E3D</code>) and Light Green (Electric Green <code>#A6E35F</code>).</li>
+              <li><strong>Cricket Decks:</strong> Blue (<code>#3343FF</code>) and Yellow Gold (Trophy Gold <code>#FFC845</code>).</li>
+              <li><strong>Parent Company:</strong> Blue (<code>#3343FF</code>) and Light Green (<code>#A6E35F</code>).</li>
+            </ul>
+          </div>
+          <div className="bg-[#FAFAFC] p-6 text-center">
+            <img src="/assets/images/application-card.svg" alt="Official Digital Application & Pitch Deck Spec Mockup" className="max-w-full h-auto mx-auto border border-[#E5E7EB]" />
           </div>
         </div>
       </section>

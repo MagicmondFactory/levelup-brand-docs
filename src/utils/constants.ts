@@ -171,5 +171,8 @@ export const LOGO_PACKAGE_URL = "https://drive.google.com/drive/folders/16eII7zn
 export const BROCHURE_URL = "https://drive.google.com/file/d/18JdNdoxZ0MmpjUo9Y1SB6nPABPxtaDpz/view?usp=drive_link";
 export const SOCIAL_MEDIA_DPS_URL = "https://drive.google.com/drive/folders/1c-ZrHWJiPFVe_TfQ8R2wx3CDF_mZTifR?usp=sharing";
 export const BRAND_COLLATERALS_URL = "https://drive.google.com/drive/folders/1E5dWJjlddC9SONJL4cYHJ1YZsrbySAV9?usp=sharing";
+export const SAMPLE_CREATIVES_URL = "https://drive.google.com/drive/folders/1Lb6caQq0m4fWc6y4pV98AHwTPcKJfM0I?usp=sharing";
+export const LETTERHEAD_URL = "https://drive.google.com/drive/folders/1K63Odg0Oi_WxZwl-Z6inK8kSdxiDj_5h?usp=drive_link";
+export const BUSINESS_CARDS_URL = "https://drive.google.com/drive/folders/1tV735vQqA2gKfbVS8HrsC1z9EXbH5NfJ?usp=drive_link";
 export const BRAND_DOCS_VERSION = "v1.0";
 export const LAST_UPDATED = "September 2026";

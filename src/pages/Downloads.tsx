@@ -1,12 +1,23 @@
 import { Link } from 'react-router-dom';
-import { BROCHURE_URL, LOGO_PACKAGE_URL, SOCIAL_MEDIA_DPS_URL, BRAND_COLLATERALS_URL } from '../utils/constants';
+import { 
+  BROCHURE_URL, 
+  LOGO_PACKAGE_URL, 
+  SOCIAL_MEDIA_DPS_URL, 
+  BRAND_COLLATERALS_URL,
+  BUSINESS_CARDS_URL,
+  LETTERHEAD_URL,
+  SAMPLE_CREATIVES_URL
+} from '../utils/constants';
 
 const VECTOR_LOGOS = [
   { name: "LEVELUP Primary Wordmark", category: "Logo", format: "SVG", desc: "Primary brand logotype for web headers & collateral", link: "/assets/logos/LEVELUP.svg", isDownload: true },
   { name: "Standalone 'U' Symbol", category: "Logo", format: "SVG", desc: "Icon mark, social avatar, broadcast corner watermark", link: "/assets/logos/U.svg", isDownload: true },
   { name: "'UP' Secondary Mark", category: "Logo", format: "SVG", desc: "Secondary badge mark for merchandise & video lower-thirds", link: "/assets/logos/UP.svg", isDownload: true },
   { name: "Brand Guide Book (Official Manual)", category: "Manual", format: "PDF / DRIVE", desc: "Official brand identity manual, rules, and guidelines documentation", link: BROCHURE_URL, isExternal: true },
-  { name: "Brand Collaterals Suite", category: "Collateral", format: "DRIVE / SUITE", desc: "Official business card, letterhead, and sample social media creative assets", link: BRAND_COLLATERALS_URL, isExternal: true },
+  { name: "Business Cards Package", category: "Collateral", format: "PRINT / DRIVE", desc: "Official business card vector source files, print specs, and templates", link: BUSINESS_CARDS_URL, isExternal: true },
+  { name: "Official Letterhead Suite", category: "Collateral", format: "DOC / DRIVE", desc: "Corporate letterhead document templates & print stationery files", link: LETTERHEAD_URL, isExternal: true },
+  { name: "Sample Social Media Creatives", category: "Social", format: "POST / DRIVE", desc: "1:1 high-impact campaign & statistics highlight post creatives", link: SAMPLE_CREATIVES_URL, isExternal: true },
+  { name: "Brand Collaterals Suite (Master Folder)", category: "Collateral", format: "DRIVE / SUITE", desc: "Master collection containing business cards, letterheads, and social creatives", link: BRAND_COLLATERALS_URL, isExternal: true },
   { name: "Social Media DPs (Avatars / Icons)", category: "Social", format: "PNG / DRIVE", desc: "Curated suite of 3 official social media display pictures & profile avatars", link: SOCIAL_MEDIA_DPS_URL, isExternal: true },
   { name: "Complete Logo Folder (EPS / PNG)", category: "Package", format: "ZIP / DRIVE", desc: "Full EPS print vectors & transparent PNG asset suite", link: LOGO_PACKAGE_URL, isExternal: true },
 ];
