@@ -174,5 +174,6 @@ export const BRAND_COLLATERALS_URL = "https://drive.google.com/drive/folders/1E5
 export const SAMPLE_CREATIVES_URL = "https://drive.google.com/drive/folders/1Lb6caQq0m4fWc6y4pV98AHwTPcKJfM0I?usp=sharing";
 export const LETTERHEAD_URL = "https://drive.google.com/drive/folders/1K63Odg0Oi_WxZwl-Z6inK8kSdxiDj_5h?usp=drive_link";
 export const BUSINESS_CARDS_URL = "https://drive.google.com/drive/folders/1tV735vQqA2gKfbVS8HrsC1z9EXbH5NfJ?usp=drive_link";
+export const APP_ICON_URL = "https://drive.google.com/drive/folders/1KqhOLRzfR5bRe8Fp5lZnzlKwUaCiAB_x?usp=drive_link";
 export const BRAND_DOCS_VERSION = "v1.0";
 export const LAST_UPDATED = "September 2026";

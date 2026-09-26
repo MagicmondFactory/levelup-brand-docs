@@ -36,12 +36,16 @@ export function BusinessCardGenerator() {
     setIsExporting(true);
     try {
       const renderCard = async (elem: HTMLElement, name: string) => {
+        // Temporarily ensure element is positioned for offscreen capture if hidden
+        const prevDisplay = elem.style.display;
+        elem.style.display = 'block';
         const canvas = await html2canvas(elem, {
           scale: 3, // High DPI for print sharpness
           useCORS: true,
           backgroundColor: null,
           logging: false,
         });
+        elem.style.display = prevDisplay;
         const link = document.createElement('a');
         link.download = `levelup-business-card-${name}-${card.firstName.toLowerCase()}-${card.lastName.toLowerCase()}.jpg`;
         link.href = canvas.toDataURL('image/jpeg', 0.95);
@@ -66,19 +70,26 @@ export function BusinessCardGenerator() {
     try {
       if (!frontRef.current || !backRef.current) return;
 
-      // Standard business card size: 3.5in x 2in (88.9mm x 50.8mm) or 90mm x 54mm
       const pdf = new jsPDF({
         orientation: 'landscape',
         unit: 'mm',
         format: [89, 51], // standard 3.5 x 2 inch
       });
 
+      const prevFrontDisplay = frontRef.current.style.display;
+      frontRef.current.style.display = 'block';
       const frontCanvas = await html2canvas(frontRef.current, { scale: 3, useCORS: true, logging: false });
+      frontRef.current.style.display = prevFrontDisplay;
+
+      const prevBackDisplay = backRef.current.style.display;
+      backRef.current.style.display = 'block';
+      const backCanvas = await html2canvas(backRef.current, { scale: 3, useCORS: true, logging: false });
+      backRef.current.style.display = prevBackDisplay;
+
       const frontData = frontCanvas.toDataURL('image/jpeg', 0.98);
       pdf.addImage(frontData, 'JPEG', 0, 0, 89, 51);
 
       pdf.addPage([89, 51], 'landscape');
-      const backCanvas = await html2canvas(backRef.current, { scale: 3, useCORS: true, logging: false });
       const backData = backCanvas.toDataURL('image/jpeg', 0.98);
       pdf.addImage(backData, 'JPEG', 0, 0, 89, 51);
 
@@ -268,92 +279,101 @@ export function BusinessCardGenerator() {
 
           {/* Cards Wrapper (Both mounted so html2canvas can capture accurately) */}
           <div className="w-full flex flex-col items-center justify-center py-4 bg-[#FAFAFC] border border-[#E5E7EB]">
-            {/* BACK FACE (Details) */}
+            {/* BACK FACE (Details & White background) */}
             <div
               ref={backRef}
               style={{
                 display: activeSide === 'back' ? 'block' : 'none',
-                width: '460px',
+                width: '500px',
                 maxWidth: '100%',
-                aspectRatio: '1.75 / 1', // ~89mm x 51mm
+                aspectRatio: '1.75 / 1',
               }}
-              className="bg-white border border-[#E5E7EB] shadow-md p-6 sm:p-7 relative flex flex-col justify-between overflow-hidden select-none"
+              className="bg-white border border-[#E5E7EB] shadow-lg relative flex flex-col justify-between overflow-hidden select-none px-8 py-7"
             >
-              {/* Subtle watermark in top right */}
-              <div className="absolute top-5 right-5 pointer-events-none opacity-[0.14]">
-                <img src="/assets/logos/UP.svg" alt="UP Watermark" className="w-16 h-auto" />
+              {/* Top Section */}
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="font-['Radio_Canada_Big'] text-[26px] font-black text-[#070732] leading-[1.08] tracking-[-0.03em]">
+                    {card.firstName || 'JOSEPH'}<br />
+                    {card.lastName || 'BOU CHACRA'}
+                  </h2>
+                  <div className="font-['Radio_Canada_Big'] text-[11px] font-extrabold text-[#64748B] tracking-[0.06em] uppercase mt-2.5">
+                    {card.designation || 'FOUNDER & CEO'}
+                  </div>
+                </div>
+
+                {/* Top-Right UP Mark in pale lilac/periwinkle tint matching reference */}
+                <div className="w-20 pt-0.5">
+                  <svg viewBox="0 0 324 193" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+                    <path d="M162.557 129C160.191 143.067 155.312 154.79 147.918 164.167C140.524 173.545 130.912 180.579 119.082 185.268C107.4 189.957 88.7833 192.301 72.9609 192.301C51.8148 192.301 30.3145 187.99 18.1888 179.369C6.06316 170.596 4.36931e-06 157.512 0 140.118C1.00662e-06 137.849 0.074075 135.504 0.221944 133.084C0.517691 130.664 0.887323 128.168 1.33095 125.597L17.3014 33.4817H66.3218L62.9218 52.1571L23.0799 92.1189L59.7066 71.1959L50.3513 126.051C50.2034 127.261 50.0556 128.471 49.9078 129.681C49.7599 130.891 49.6862 132.101 49.6862 133.311C49.6862 139.815 51.4607 145.034 55.0097 148.966C58.7066 152.899 69.264 154.865 76.9534 154.865C85.9737 154.865 98.0837 152.142 103.555 146.697C109.026 141.252 112.502 134.37 113.981 126.051L129.672 31.2531L184.452 0L162.557 129Z" fill="#E8EBFC"/>
+                    <path d="M281.384 33.4817C289.96 33.4817 297.354 35.3722 303.565 39.1536C309.924 42.7837 314.877 47.9267 318.426 54.5819C321.975 61.2372 323.75 68.8757 323.75 77.4973C323.75 86.1189 322.345 94.2112 319.536 101.774C316.874 109.186 312.955 115.69 307.78 121.286C302.752 126.883 296.689 131.269 289.591 134.445C282.641 137.622 274.803 139.21 266.079 139.21H223.713L215.062 189.579H166.041L181.108 102.671H230.147L230.145 102.681H255.654C259.794 102.681 263.121 101.774 265.635 99.9589C268.297 98.1439 270.219 95.7237 271.402 92.6986C272.733 89.6735 273.399 86.3456 273.399 82.7155C273.399 78.7829 272.216 75.7577 269.85 73.6401C267.632 71.5226 265.554 70.9148 259.625 70.9333H237.834V70.9148H186.673L193.102 33.4817H281.384Z" fill="#E8EBFC"/>
+                  </svg>
+                </div>
               </div>
 
-              {/* Top: Name & Designation */}
-              <div className="relative z-10">
-                <h2 className="font-['Radio_Canada_Big'] text-xl sm:text-2xl font-black text-[#070732] leading-tight tracking-tight">
-                  {card.firstName || 'JOSEPH'}
-                </h2>
-                <h2 className="font-['Radio_Canada_Big'] text-xl sm:text-2xl font-black text-[#070732] leading-tight tracking-tight mb-1.5">
-                  {card.lastName || 'BOU CHACRA'}
-                </h2>
-                <div className="font-['Radio_Canada_Big'] text-[11px] sm:text-xs font-extrabold text-[#475569] uppercase tracking-wider">
-                  {card.designation || 'FOUNDER & CEO'}
-                </div>
-              </div>
+              {/* Full-width Divider */}
+              <div className="w-full border-t border-[#E5E7EB] my-2"></div>
 
-              {/* Bottom: Contact Table with clean hairline dividers */}
-              <div className="relative z-10 w-full text-[10px] sm:text-[11px] font-['Geist'] text-[#0F172A] border-t border-[#E5E7EB] pt-2 space-y-1.5">
-                <div className="flex justify-between items-center py-0.5 border-b border-[#F1F5F9]">
-                  <span className="font-bold text-[#64748B] uppercase tracking-wider text-[9px]">EMAIL</span>
-                  <span className="font-semibold text-right text-[#070732] truncate">{card.email || 'JOSEPH_15@LEVELUP.AI'}</span>
+              {/* Bottom Contact List */}
+              <div className="w-full space-y-2 text-[10.5px] font-['Radio_Canada_Big']">
+                <div className="flex justify-between items-center border-b border-[#F1F5F9] pb-1.5">
+                  <span className="font-extrabold text-[#334155] tracking-[0.08em] uppercase text-[9.5px]">EMAIL</span>
+                  <span className="font-bold text-[#0F172A] tracking-[0.02em]">{card.email || 'JOSEPH_15@LEVELUP.AI'}</span>
                 </div>
-                <div className="flex justify-between items-center py-0.5 border-b border-[#F1F5F9]">
-                  <span className="font-bold text-[#64748B] uppercase tracking-wider text-[9px]">CONTACT</span>
-                  <span className="font-semibold text-right text-[#070732]">{card.contact || '+971 - 965-4558-154'}</span>
+                <div className="flex justify-between items-center border-b border-[#F1F5F9] pb-1.5">
+                  <span className="font-extrabold text-[#334155] tracking-[0.08em] uppercase text-[9.5px]">CONTACT</span>
+                  <span className="font-bold text-[#0F172A] tracking-[0.02em]">{card.contact || '+971 - 965-4558-154'}</span>
                 </div>
-                <div className="flex justify-between items-center py-0.5 border-b border-[#F1F5F9]">
-                  <span className="font-bold text-[#64748B] uppercase tracking-wider text-[9px]">WEBSITE</span>
-                  <span className="font-semibold text-right text-[#070732]">{card.website || 'LEVELUPMEDIA.AI'}</span>
+                <div className="flex justify-between items-center border-b border-[#F1F5F9] pb-1.5">
+                  <span className="font-extrabold text-[#334155] tracking-[0.08em] uppercase text-[9.5px]">WEBSITE</span>
+                  <span className="font-bold text-[#0F172A] tracking-[0.02em]">{card.website || 'LEVELUPMEDIA.AI'}</span>
                 </div>
-                <div className="flex justify-between items-center py-0.5">
-                  <span className="font-bold text-[#64748B] uppercase tracking-wider text-[9px]">ADDRESS</span>
-                  <span className="font-semibold text-right text-[#070732] text-[9.5px] sm:text-[10px]">{card.address || 'TOWER 6, PALM BEACH, DUBAI (UAE)'}</span>
+                <div className="flex justify-between items-center pt-0.5">
+                  <span className="font-extrabold text-[#334155] tracking-[0.08em] uppercase text-[9.5px]">ADDRESS</span>
+                  <span className="font-bold text-[#0F172A] tracking-[0.02em]">{card.address || 'TOWER 6, PALM BEACH, DUBAI (UAE)'}</span>
                 </div>
               </div>
             </div>
 
-            {/* FRONT FACE (Deep Navy Brand Mark with Subtle UP Slanted Pattern) */}
+            {/* FRONT FACE (Blue Background with Slanted Ghost UP Pattern & White Logo) */}
             <div
               ref={frontRef}
               style={{
                 display: activeSide === 'front' ? 'block' : 'none',
-                width: '460px',
+                width: '500px',
                 maxWidth: '100%',
                 aspectRatio: '1.75 / 1',
               }}
-              className="bg-[#3343FF] border border-[#2735DB] shadow-md p-6 relative flex flex-col items-center justify-center overflow-hidden select-none"
+              className="bg-[#3343FF] border border-[#2333E8] shadow-lg relative flex flex-col items-center justify-center overflow-hidden select-none p-6"
             >
-              {/* Background angled dynamic pattern */}
-              <div className="absolute inset-0 opacity-20 pointer-events-none flex items-center justify-center">
-                <img src="/assets/logos/UP.svg" alt="Pattern" className="w-[120%] h-auto brightness-0 invert scale-125" />
+              {/* Massive Ghost UP Watermark across entire card */}
+              <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
+                <svg viewBox="0 0 324 193" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[145%] h-auto opacity-[0.16] transform -rotate-6 scale-110">
+                  <path d="M162.557 129C160.191 143.067 155.312 154.79 147.918 164.167C140.524 173.545 130.912 180.579 119.082 185.268C107.4 189.957 88.7833 192.301 72.9609 192.301C51.8148 192.301 30.3145 187.99 18.1888 179.369C6.06316 170.596 4.36931e-06 157.512 0 140.118C1.00662e-06 137.849 0.074075 135.504 0.221944 133.084C0.517691 130.664 0.887323 128.168 1.33095 125.597L17.3014 33.4817H66.3218L62.9218 52.1571L23.0799 92.1189L59.7066 71.1959L50.3513 126.051C50.2034 127.261 50.0556 128.471 49.9078 129.681C49.7599 130.891 49.6862 132.101 49.6862 133.311C49.6862 139.815 51.4607 145.034 55.0097 148.966C58.7066 152.899 69.264 154.865 76.9534 154.865C85.9737 154.865 98.0837 152.142 103.555 146.697C109.026 141.252 112.502 134.37 113.981 126.051L129.672 31.2531L184.452 0L162.557 129Z" fill="white"/>
+                  <path d="M281.384 33.4817C289.96 33.4817 297.354 35.3722 303.565 39.1536C309.924 42.7837 314.877 47.9267 318.426 54.5819C321.975 61.2372 323.75 68.8757 323.75 77.4973C323.75 86.1189 322.345 94.2112 319.536 101.774C316.874 109.186 312.955 115.69 307.78 121.286C302.752 126.883 296.689 131.269 289.591 134.445C282.641 137.622 274.803 139.21 266.079 139.21H223.713L215.062 189.579H166.041L181.108 102.671H230.147L230.145 102.681H255.654C259.794 102.681 263.121 101.774 265.635 99.9589C268.297 98.1439 270.219 95.7237 271.402 92.6986C272.733 89.6735 273.399 86.3456 273.399 82.7155C273.399 78.7829 272.216 75.7577 269.85 73.6401C267.632 71.5226 265.554 70.9148 259.625 70.9333H237.834V70.9148H186.673L193.102 33.4817H281.384Z" fill="white"/>
+                </svg>
               </div>
 
               {/* Centered White Wordmark */}
-              <div className="relative z-10 flex flex-col items-center justify-center text-center">
+              <div className="relative z-10 flex flex-col items-center justify-center text-center mt-2">
                 <img
                   src="/assets/logos/LEVELUP-white.svg"
                   alt="LevelUp Media"
-                  className="w-48 sm:w-56 h-auto drop-shadow-sm mb-4"
+                  className="w-56 sm:w-64 h-auto block drop-shadow-sm"
                 />
-                <span className="text-[10px] sm:text-xs font-['Space_Grotesk'] font-bold text-white/80 tracking-[0.25em] uppercase">
-                  LEVEL UP YOUR GAME
+                <span className="text-[10px] sm:text-[11px] font-['Space_Grotesk'] font-bold text-white/70 tracking-[0.3em] uppercase mt-12 sm:mt-14">
+                  L E V E L &nbsp; U P &nbsp; Y O U R &nbsp; G A M E
                 </span>
               </div>
             </div>
 
             {/* Dimension Specs tag */}
             <div className="mt-3 text-[11px] text-[#64748B] font-['Space_Grotesk'] flex items-center gap-3">
-              <span>Standard Size: 89mm × 51mm</span>
+              <span>Standard Size: 89mm × 51mm (3.5&quot; × 2&quot;)</span>
               <span>•</span>
-              <span>Aspect Ratio: 1.75:1</span>
+              <span>Font: Radio Canada Big</span>
               <span>•</span>
-              <span>Color Profile: High Contrast</span>
+              <span>Vector Print Precision</span>
             </div>
           </div>
         </div>

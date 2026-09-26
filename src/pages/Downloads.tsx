@@ -6,7 +6,8 @@ import {
   BRAND_COLLATERALS_URL,
   BUSINESS_CARDS_URL,
   LETTERHEAD_URL,
-  SAMPLE_CREATIVES_URL
+  SAMPLE_CREATIVES_URL,
+  APP_ICON_URL
 } from '../utils/constants';
 
 const VECTOR_LOGOS = [
@@ -14,6 +15,7 @@ const VECTOR_LOGOS = [
   { name: "Standalone 'U' Symbol", category: "Logo", format: "SVG", desc: "Icon mark, social avatar, broadcast corner watermark", link: "/assets/logos/U.svg", isDownload: true },
   { name: "'UP' Secondary Mark", category: "Logo", format: "SVG", desc: "Secondary badge mark for merchandise & video lower-thirds", link: "/assets/logos/UP.svg", isDownload: true },
   { name: "Brand Guide Book (Official Manual)", category: "Manual", format: "PDF / DRIVE", desc: "Official brand identity manual, rules, and guidelines documentation", link: BROCHURE_URL, isExternal: true },
+  { name: "App Icon Suite (iOS / Android / Web)", category: "Icon", format: "ICON / DRIVE", desc: "Official mobile application icons, favicon assets, and app store graphics", link: APP_ICON_URL, isExternal: true },
   { name: "Business Cards Package", category: "Collateral", format: "PRINT / DRIVE", desc: "Official business card vector source files, print specs, and templates", link: BUSINESS_CARDS_URL, isExternal: true },
   { name: "Official Letterhead Suite", category: "Collateral", format: "DOC / DRIVE", desc: "Corporate letterhead document templates & print stationery files", link: LETTERHEAD_URL, isExternal: true },
   { name: "Sample Social Media Creatives", category: "Social", format: "POST / DRIVE", desc: "1:1 high-impact campaign & statistics highlight post creatives", link: SAMPLE_CREATIVES_URL, isExternal: true },
