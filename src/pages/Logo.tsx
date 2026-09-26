@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { LOGO_BLUE_URL, LOGO_DARK_URL, LOGO_LIGHT_URL } from '../utils/constants';
 
 const MISUSE_RULES = [
   { rule: "Do Not Distort or Stretch", desc: "Never condense, expand, skew, or disproportionately scale the wordmark or mark." },
@@ -28,19 +29,19 @@ export default function Logo() {
           <p>Use the official vector files supplied below. Never approximate, redraw, or alter the logotype geometry.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
           {/* Primary Wordmark */}
           <div className="border border-[#E5E7EB] overflow-hidden bg-white">
-            <div className="p-12 flex items-center justify-center bg-[#070732] min-h-[180px]">
-              <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Wordmark" className="h-10 w-auto brightness-0 invert" />
+            <div className="p-10 flex items-center justify-center bg-[#070732] min-h-[170px]">
+              <img src="/assets/logos/LEVELUP.svg" alt="LevelUp Wordmark" className="h-9 w-auto brightness-0 invert" />
             </div>
-            <div className="p-5 flex items-center justify-between bg-white border-t border-[#E5E7EB]">
+            <div className="p-4 flex items-center justify-between bg-white border-t border-[#E5E7EB]">
               <div>
-                <div className="font-['Radio_Canada_Big'] font-bold text-base text-[#0F172A]">LEVELUP Wordmark</div>
-                <div className="text-xs text-[#64748B]">Primary brand signature (Vector SVG)</div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A]">LEVELUP Wordmark</div>
+                <div className="text-[11px] text-[#64748B]">Primary signature (Vector SVG)</div>
               </div>
               <a href="/assets/logos/LEVELUP.svg" download="LEVELUP.svg" className="inline-download-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 SVG
               </a>
             </div>
@@ -48,17 +49,117 @@ export default function Logo() {
 
           {/* Standalone U Symbol */}
           <div className="border border-[#E5E7EB] overflow-hidden bg-white">
-            <div className="p-12 flex items-center justify-center bg-[#070732] min-h-[180px]">
-              <img src="/assets/logos/U.svg" alt="LevelUp U Symbol" className="h-14 w-auto brightness-0 invert" />
+            <div className="p-10 flex items-center justify-center bg-[#070732] min-h-[170px]">
+              <img src="/assets/logos/U.svg" alt="LevelUp U Symbol" className="h-12 w-auto brightness-0 invert" />
             </div>
-            <div className="p-5 flex items-center justify-between bg-white border-t border-[#E5E7EB]">
+            <div className="p-4 flex items-center justify-between bg-white border-t border-[#E5E7EB]">
               <div>
-                <div className="font-['Radio_Canada_Big'] font-bold text-base text-[#0F172A]">Standalone &apos;U&apos; Symbol</div>
-                <div className="text-xs text-[#64748B]">Icon &amp; app mark (Vector SVG)</div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A]">Icon Type #1: &apos;U&apos;</div>
+                <div className="text-[11px] text-[#64748B]">App mark &amp; favicon (SVG)</div>
               </div>
               <a href="/assets/logos/U.svg" download="U.svg" className="inline-download-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 SVG
+              </a>
+            </div>
+          </div>
+
+          {/* Icon Type #2: 'UP' Symbol */}
+          <div className="border border-[#E5E7EB] overflow-hidden bg-white">
+            <div className="p-10 flex items-center justify-center bg-[#070732] min-h-[170px]">
+              <img src="/assets/logos/UP.svg" alt="LevelUp UP Symbol" className="h-12 w-auto brightness-0 invert" />
+            </div>
+            <div className="p-4 flex items-center justify-between bg-white border-t border-[#E5E7EB]">
+              <div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A]">Icon Type #2: &apos;UP&apos;</div>
+                <div className="text-[11px] text-[#64748B]">Secondary mark &amp; badge (SVG)</div>
+              </div>
+              <a href="/assets/logos/UP.svg" download="UP.svg" className="inline-download-btn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                SVG
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Wordmark Colour Versions & Downloads */}
+        <div className="mt-8 border border-[#E5E7EB] bg-white">
+          <div className="p-5 border-b border-[#E5E7EB]">
+            <h3 className="font-['Radio_Canada_Big'] text-base font-bold text-[#0F172A]">
+              Wordmark &amp; Icon Color Versions (Official Drive Downloads)
+            </h3>
+            <p className="text-xs text-[#475569] mt-0.5">
+              Production asset packages provided across all three primary background modes: Blue, Dark Navy, and Light.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-[#E5E7EB]">
+            {/* Blue Version */}
+            <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
+              <div>
+                <div className="h-28 bg-[#3343FF] flex items-center justify-center p-6 border border-[#2333E8] mb-4">
+                  <img src="/assets/logos/LEVELUP-white.svg" alt="Blue Version" className="h-7 w-auto drop-shadow-sm" />
+                </div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
+                  Blue Version
+                </div>
+                <p className="text-xs text-[#475569] leading-relaxed mb-4">
+                  Primary electric brand version on Blue Orchid (<code>#3343FF</code>) fields.
+                </p>
+              </div>
+              <a
+                href={LOGO_BLUE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-download-btn w-full justify-center text-center"
+              >
+                Download Blue Drive ↗
+              </a>
+            </div>
+
+            {/* Dark Version */}
+            <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
+              <div>
+                <div className="h-28 bg-[#070732] flex items-center justify-center p-6 border border-[#0F172A] mb-4">
+                  <img src="/assets/logos/LEVELUP-white.svg" alt="Dark Version" className="h-7 w-auto" />
+                </div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
+                  Dark Version
+                </div>
+                <p className="text-xs text-[#475569] leading-relaxed mb-4">
+                  High-contrast inverted logotype for dark navy (<code>#070732</code>) broadcast &amp; nighttime media.
+                </p>
+              </div>
+              <a
+                href={LOGO_DARK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-download-btn w-full justify-center text-center"
+              >
+                Download Dark Drive ↗
+              </a>
+            </div>
+
+            {/* Light Version */}
+            <div className="p-5 flex flex-col justify-between bg-[#FAFAFC]">
+              <div>
+                <div className="h-28 bg-white flex items-center justify-center p-6 border border-[#E5E7EB] mb-4">
+                  <img src="/assets/logos/LEVELUP.svg" alt="Light Version" className="h-7 w-auto" />
+                </div>
+                <div className="font-['Radio_Canada_Big'] font-bold text-sm text-[#0F172A] mb-1">
+                  Light Version
+                </div>
+                <p className="text-xs text-[#475569] leading-relaxed mb-4">
+                  Standard dark navy signature on crisp white (<code>#FFFFFF</code>) or pale light stationery backgrounds.
+                </p>
+              </div>
+              <a
+                href={LOGO_LIGHT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-download-btn w-full justify-center text-center"
+              >
+                Download Light Drive ↗
               </a>
             </div>
           </div>

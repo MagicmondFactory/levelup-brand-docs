@@ -7,13 +7,19 @@ import {
   BUSINESS_CARDS_URL,
   LETTERHEAD_URL,
   SAMPLE_CREATIVES_URL,
-  APP_ICON_URL
+  APP_ICON_URL,
+  LOGO_BLUE_URL,
+  LOGO_DARK_URL,
+  LOGO_LIGHT_URL
 } from '../utils/constants';
 
 const VECTOR_LOGOS = [
   { name: "LEVELUP Primary Wordmark", category: "Logo", format: "SVG", desc: "Primary brand logotype for web headers & collateral", link: "/assets/logos/LEVELUP.svg", isDownload: true },
   { name: "Standalone 'U' Symbol", category: "Logo", format: "SVG", desc: "Icon mark, social avatar, broadcast corner watermark", link: "/assets/logos/U.svg", isDownload: true },
   { name: "'UP' Secondary Mark", category: "Logo", format: "SVG", desc: "Secondary badge mark for merchandise & video lower-thirds", link: "/assets/logos/UP.svg", isDownload: true },
+  { name: "Wordmark & UP (Blue Edition)", category: "Logo", format: "COLOR / DRIVE", desc: "Electric blue orchid vector & raster suite for primary brand applications", link: LOGO_BLUE_URL, isExternal: true },
+  { name: "Wordmark & UP (Dark Edition)", category: "Logo", format: "COLOR / DRIVE", desc: "Inverted white & deep navy vectors for dark background media and night broadcasts", link: LOGO_DARK_URL, isExternal: true },
+  { name: "Wordmark & UP (Light Edition)", category: "Logo", format: "COLOR / DRIVE", desc: "Standard deep navy wordmark on clean white paper & light stationery backgrounds", link: LOGO_LIGHT_URL, isExternal: true },
   { name: "Brand Guide Book (Official Manual)", category: "Manual", format: "PDF / DRIVE", desc: "Official brand identity manual, rules, and guidelines documentation", link: BROCHURE_URL, isExternal: true },
   { name: "App Icon Suite (iOS / Android / Web)", category: "Icon", format: "ICON / DRIVE", desc: "Official mobile application icons, favicon assets, and app store graphics", link: APP_ICON_URL, isExternal: true },
   { name: "Business Cards Package", category: "Collateral", format: "PRINT / DRIVE", desc: "Official business card vector source files, print specs, and templates", link: BUSINESS_CARDS_URL, isExternal: true },

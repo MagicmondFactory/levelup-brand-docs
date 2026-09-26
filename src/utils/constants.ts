@@ -175,5 +175,11 @@ export const SAMPLE_CREATIVES_URL = "https://drive.google.com/drive/folders/1Lb6
 export const LETTERHEAD_URL = "https://drive.google.com/drive/folders/1K63Odg0Oi_WxZwl-Z6inK8kSdxiDj_5h?usp=drive_link";
 export const BUSINESS_CARDS_URL = "https://drive.google.com/drive/folders/1tV735vQqA2gKfbVS8HrsC1z9EXbH5NfJ?usp=drive_link";
 export const APP_ICON_URL = "https://drive.google.com/drive/folders/1KqhOLRzfR5bRe8Fp5lZnzlKwUaCiAB_x?usp=drive_link";
+
+// Logo & Wordmark Color Variants Drive Links
+export const LOGO_BLUE_URL = "https://drive.google.com/drive/folders/1-UZvUEsH5Kp6BS9xBMGD7Y0XprgUB29-?usp=drive_link";
+export const LOGO_DARK_URL = "https://drive.google.com/drive/folders/1zNAxuRMY52wjtglXg-Gb22UhKByOVnaD?usp=drive_link";
+export const LOGO_LIGHT_URL = "https://drive.google.com/drive/folders/1dFuvXK5stPJEI9WsNmzRfbJq-k1GH8Qh?usp=drive_link";
+
 export const BRAND_DOCS_VERSION = "v1.0";
 export const LAST_UPDATED = "September 2026";
